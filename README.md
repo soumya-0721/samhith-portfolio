@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Samhithreddy Sangam
 
-## Getting Started
+**Founder & CEO @ NEXT 360 | Civil Engineer x Tech Strategist**
 
-First, run the development server:
+Welcome to my digital portfolio. This project represents the intersection of physical engineering and digital intelligence, designed with a unique **"Digital Schematic"** aesthetic that bridges my background in Civil Engineering with my career in Technology.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏗️ About The Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio is not just a showcase of work; it's a statement of identity. It moves away from standard web design trends to embrace a technical, blueprint-inspired visual language.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Schematic Aesthetic**: A custom structural grid background and "Heads-Up Display" (HUD) overlay representing engineering precision.
+- **Minimal Swiss Design**: Content allows for "breathing room" with a strict grid system, sticky labels, and high-contrast typography.
+- **Interactive Elements**: Spotlight card reveals, smooth Lenis scrolling, and active navigation states.
+- **Civil + Tech Duality**: Visuals that merge CAD-like aesthetics with modern web interactivity.
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+Built with performance and precision in mind:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Smooth Scroll**: Lenis
+- **Icons**: Lucide React
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+1.  **Clone the repository** (if you have access):
+    ```bash
+    git clone https://github.com/samhithreddysangam/portfolio.git
+    ```
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📫 Connect
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **LinkedIn**: [linkedin.com/in/samhithreddysangam](https://linkedin.com/in/samhithreddysangam)
+- **GitHub**: [github.com/samhithreddysangam](https://github.com/samhithreddysangam)
+- **Email**: samhithreddysangam@gmail.com
+
+---
+
+_© 2026 Samhithreddy Sangam. All Rights Reserved._
