@@ -65,7 +65,7 @@ export function About() {
                     <div className="space-y-1 text-sm text-neutral-300">
                         <div>Karimnagar, Telangana</div>
                         <div>India</div>
-                        <div className="text-green-500 text-xs mt-2">• Open to Remote</div>
+                    
                     </div>
                  </div>
 

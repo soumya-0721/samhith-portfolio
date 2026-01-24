@@ -17,8 +17,9 @@ export function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-sm mb-6">
-             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-             Available for Work
+             <div className="w-2 h-2 rounded-full bg-green
+             -500 animate-pulse" />
+           Hiring
           </div>
 
           <h2 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[1.1] mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 pb-2">

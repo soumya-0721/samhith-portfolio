@@ -14,6 +14,7 @@ const navLinks = [
   { name: "Work", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Honors", href: "#achievements" },
+  { name: "Media", href: "#featured" },
 ];
 
 export function Navbar() {
