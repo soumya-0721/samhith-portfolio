@@ -487,12 +487,12 @@ export function Hero() {
                   {/* Portrait - positioned on the left side */}
                   <div className="relative z-[2] w-[160px] h-[160px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] shrink-0 ml-2 md:ml-0">
                     {/* Green backlight glow */}
-                    <div className="absolute inset-[-10px] rounded-full bg-[#4E8F57]/10 blur-[30px] animate-pulse-glow" />
+                    <div className="absolute inset-[-10px] rounded-2xl bg-[#4E8F57]/10 blur-[30px] animate-pulse-glow" />
 
-                    {/* Portrait */}
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[rgba(78,143,87,0.2)] shadow-2xl shadow-[#4E8F57]/10">
+                    {/* Portrait - square format */}
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-[rgba(78,143,87,0.2)] shadow-2xl shadow-[#4E8F57]/10">
                       <Image
-                        src="/assets/IMG_2069.JPG.jpeg"
+                        src="/assets/sangam-profile.png"
                         alt="Samhith Reddy Sangam"
                         fill
                         className="object-cover"
@@ -502,7 +502,7 @@ export function Hero() {
                     </div>
 
                     {/* Subtle ring */}
-                    <div className="absolute inset-[-12px] rounded-full border border-[rgba(78,143,87,0.12)]" />
+                    <div className="absolute inset-[-12px] rounded-2xl border border-[rgba(78,143,87,0.12)]" />
                   </div>
 
                   {/* India Map - positioned beside the portrait, extending to the right */}
