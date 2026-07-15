@@ -2,25 +2,49 @@
 
 @theme {
   --font-sans: var(--font-inter);
+  --color-bg-primary: #08140D;
+  --color-bg-secondary: #0C1C13;
+  --color-card: rgba(18,26,21,0.72);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #C6C6C6;
+  --color-text-muted: #8A918E;
+  --color-accent: #D97B4D;
+  --color-success: #4E8F57;
+  --color-border: rgba(255,255,255,0.08);
 }
 
 :root {
-  /* Enforce Dark Theme as DEFAULT */
-  --background: #050505;
-  --foreground: #ffffff;
-  --primary: #ffffff;
-  --secondary: #a1a1aa;
-  --accent: #3b82f6;
-  --muted: #18181b;
-  --border: #27272a;
+  --background: #08140D;
+  --foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --secondary: #C6C6C6;
+  --accent: #D97B4D;
+  --muted: #8A918E;
+  --border: rgba(255,255,255,0.08);
 }
 
 body {
-  background: radial-gradient(circle at 50% 0%, #111111 0%, #050505 100%);
+  background: #08140D;
+  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217,123,77,0.08), transparent);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08140D;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(217,123,77,0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217,123,77,0.5);
 }
 
 /* Custom Utilities */
@@ -33,6 +57,21 @@ body {
 
 .perspective-1000 {
   perspective: 1000px;
+}
+
+/* Glass Card Utility */
+.glass-card {
+  background: rgba(18,26,21,0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Text Gradient Utility */
+.text-gradient-accent {
+  background: linear-gradient(135deg, #D97B4D, #E8A87C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Marquee Animations */
@@ -60,10 +99,39 @@ body {
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animate-marquee {
   animation: marquee var(--duration) linear infinite;
 }
 
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
 }

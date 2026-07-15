@@ -1,72 +1,155 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Clock, Calendar, Leaf, Globe, Lightbulb, TrendingUp, Shield } from "lucide-react";
+import Link from "next/link";
 
-const faqs = [
+const insights = [
   {
-    question: "Do you offer financing or payment plans?",
-    answer: "Yes, for larger projects, I offer flexible payment schedules. Typically, this involves an upfront deposit followed by milestone-based payments."
+    title: "The Future of Organic Commerce in India",
+    category: "Industry Trends",
+    date: "March 15, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "How technology is transforming India's organic food supply chain and creating new opportunities for farmers and consumers alike.",
+    icon: Leaf,
+    color: "#4E8F57",
   },
   {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary depending on complexity. A simple brochure site might take 2-3 weeks, while a complex web application could take 2-3 months."
+    title: "AI in Agriculture: From Farm to Table",
+    category: "Technology",
+    date: "February 28, 2026",
+    readTime: "7 min read",
+    excerpt:
+      "Exploring how artificial intelligence is revolutionizing crop management, quality assessment, and supply chain optimization in organic farming.",
+    icon: Lightbulb,
+    color: "#D97B4D",
   },
   {
-    question: "Do you handle website maintenance?",
-    answer: "Absolutely. I offer ongoing maintenance packages to ensure your website remains secure, up-to-date, and performs optimally."
+    title: "Building Trust Through Blockchain",
+    category: "Innovation",
+    date: "February 10, 2026",
+    readTime: "4 min read",
+    excerpt:
+      "How blockchain technology is creating unprecedented transparency in organic product verification and supply chain tracking.",
+    icon: Shield,
+    color: "#4E8F57",
   },
   {
-    question: "Can you help with SEO?",
-    answer: "Yes, I implement SEO best practices during development, including semantic HTML, meta tag optimization, and performance tuning."
-  }
+    title: "India's Organic Market: A $10B Opportunity",
+    category: "Market Analysis",
+    date: "January 25, 2026",
+    readTime: "6 min read",
+    excerpt:
+      "Analyzing the growth trajectory of India's organic products market and the role of technology in capturing this opportunity.",
+    icon: TrendingUp,
+    color: "#D97B4D",
+  },
+  {
+    title: "Empowering Farmers Through Technology",
+    category: "Impact",
+    date: "January 12, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Stories from the field — how digital tools are helping small farmers access markets, fair prices, and sustainable livelihoods.",
+    icon: Globe,
+    color: "#4E8F57",
+  },
+  {
+    title: "Sustainable Supply Chains: A Blueprint",
+    category: "Sustainability",
+    date: "December 20, 2025",
+    readTime: "8 min read",
+    excerpt:
+      "Designing supply chains that are environmentally sustainable, economically viable, and socially responsible — lessons from NEXT360.",
+    icon: Leaf,
+    color: "#D97B4D",
+  },
 ];
 
 export function FAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
-    <section id="faq" className="py-24 max-w-3xl mx-auto px-6">
-      <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
-      
-      <div className="space-y-4">
-        {faqs.map((faq, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="border border-border rounded-2xl overflow-hidden bg-background"
-          >
-            <button
-              onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary/5 transition-colors"
+    <section
+      id="insights"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#0C1C13]"
+    >
+      {/* Background */}
+      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] rounded-full bg-[#D97B4D]/3 blur-[100px] pointer-events-none" />
+
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+            Insights
+          </span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            Thoughts &{" "}
+            <span className="text-gradient-accent">Perspectives</span>
+          </h2>
+          <p className="text-base md:text-lg text-[#8A918E] max-w-2xl mx-auto">
+            Exploring the intersection of technology, agriculture, and sustainability.
+          </p>
+        </div>
+
+        {/* Blog Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {insights.map((post, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              whileHover={{ y: -4 }}
+              className="group relative overflow-hidden rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm hover:border-[rgba(217,123,77,0.15)] transition-all duration-500"
             >
-              <span className="text-lg font-medium">{faq.question}</span>
-              {activeIndex === idx ? (
-                <Minus className="w-5 h-5 text-secondary shrink-0" />
-              ) : (
-                <Plus className="w-5 h-5 text-secondary shrink-0" />
-              )}
-            </button>
-            <AnimatePresence>
-              {activeIndex === idx && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="p-6 pt-0 text-secondary leading-relaxed">
-                    {faq.answer}
+              {/* Image Placeholder */}
+              <div className="relative h-36 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(217,123,77,0.1)] to-[rgba(78,143,87,0.05)] group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-3 left-3">
+                  <span
+                    className="px-2.5 py-1 rounded-full text-[10px] font-medium border"
+                    style={{
+                      color: post.color,
+                      borderColor: `${post.color}30`,
+                      backgroundColor: `${post.color}10`,
+                    }}
+                  >
+                    {post.category}
+                  </span>
+                </div>
+                <div className="absolute bottom-3 right-3 w-8 h-8 rounded-lg bg-[rgba(18,26,21,0.72)] backdrop-blur-sm border border-[rgba(255,255,255,0.06)] flex items-center justify-center">
+                  <post.icon className="w-4 h-4" style={{ color: post.color }} />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-4">
+                <h3 className="text-sm font-bold text-white mb-2 line-clamp-2 group-hover:text-gradient-accent transition-all duration-300">
+                  {post.title}
+                </h3>
+                <p className="text-xs text-[#8A918E] leading-relaxed mb-3 line-clamp-2">
+                  {post.excerpt}
+                </p>
+
+                {/* Meta */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3 text-[10px] text-[#8A918E]">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#8A918E] group-hover:text-[#D97B4D] transition-colors" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -10,11 +10,13 @@ import Link from "next/link";
 const navLinks = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
-  { name: "Education", href: "#education" },
-  { name: "Work", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Honors", href: "#achievements" },
-  { name: "Media", href: "#featured" },
+  { name: "Journey", href: "#journey" },
+  { name: "NEXT360", href: "#next360" },
+  { name: "Ventures", href: "#ventures" },
+  { name: "Impact", href: "#impact" },
+  { name: "Achievements", href: "#achievements" },
+  { name: "Vision 2030", href: "#vision2030" },
+  { name: "Insights", href: "#insights" },
 ];
 
 export function Navbar() {
@@ -64,12 +66,12 @@ export function Navbar() {
          <div className="flex items-center justify-between pointer-events-auto">
              
              {/* Logo - Always Visible */}
-             <motion.div 
+              <motion.div 
                initial={{ opacity: 0, y: -20 }}
                animate={{ opacity: 1, y: 0 }}
-               className="bg-neutral-900/90 backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 text-white font-semibold shadow-xl shadow-black/20"
+               className="bg-[rgba(18,26,21,0.72)] backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 text-white font-semibold shadow-xl shadow-black/20"
              >
-                SR.
+                <span className="text-gradient-accent">SR.</span>
              </motion.div>
 
              {/* Desktop Navigation */}
@@ -77,7 +79,7 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="hidden md:flex items-center gap-1 bg-neutral-900/90 backdrop-blur-xl border border-white/10 rounded-full p-1.5 shadow-xl shadow-black/20"
+                className="hidden md:flex items-center gap-1 bg-[rgba(18,26,21,0.72)] backdrop-blur-xl border border-white/10 rounded-full p-1.5 shadow-xl shadow-black/20"
              >
                 {navLinks.map((link) => {
                     const isActive = activeSection === link.href || (link.href === "#" && activeSection === "");
@@ -87,8 +89,8 @@ export function Navbar() {
                           href={link.href}
                           onClick={(e) => { e.preventDefault(); handleScroll(link.href); }}
                           className={cn(
-                              "relative px-4 py-2 rounded-full transition-all duration-300 font-medium whitespace-nowrap",
-                              isActive ? "text-white bg-white/10" : "text-neutral-400 hover:text-white hover:bg-white/5"
+                              "relative px-3 py-2 rounded-full transition-all duration-300 text-xs font-medium whitespace-nowrap",
+                              isActive ? "text-white bg-white/10" : "text-[#8A918E] hover:text-white hover:bg-white/5"
                           )}
                       >
                           {link.name}
@@ -114,7 +116,7 @@ export function Navbar() {
                 <a 
                     href="#contact" 
                     onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
-                    className="group flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-semibold hover:bg-neutral-200 transition-colors shadow-lg shadow-white/5"
+                    className="group flex items-center gap-2 bg-[#D97B4D] text-white px-5 py-2.5 rounded-full font-semibold hover:bg-[#c96a3d] transition-colors shadow-lg shadow-[#D97B4D]/20"
                 >
                    Contact
                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -1,52 +1,83 @@
 "use client";
 
-import LogoLoop from "@/components/ui/LogoLoop";
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPython,
-  SiFigma,
-  SiFlutter,
-  SiFirebase,
-  SiAmazon
-} from "react-icons/si";
+import { motion } from "framer-motion";
+import { Leaf, Shield, TrendingUp, HeartHandshake } from "lucide-react";
 
-const techLogos = [
-  { node: <SiReact className="text-[#61DAFB]" />, title: "React" },
-  { node: <SiNextdotjs className="text-white" />, title: "Next.js" },
-  { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript" },
-  { node: <SiTailwindcss className="text-[#06B6D4]" />, title: "Tailwind CSS" },
-  { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js" },
-  { node: <SiPython className="text-[#3776AB]" />, title: "Python" },
-  { node: <SiFigma className="text-[#F24E1E]" />, title: "Figma" },
-  { node: <SiFlutter className="text-[#02569B]" />, title: "Flutter" },
-  { node: <SiFirebase className="text-[#FFCA28]" />, title: "Firebase" },
-  { node: <SiAmazon className="text-[#FF9900]" />, title: "AWS" },
+const missionPoints = [
+  {
+    icon: Leaf,
+    title: "Empower Farmers",
+    description:
+      "Provide India's farmers with direct market access, fair pricing, and technology tools that eliminate intermediaries and increase their livelihoods.",
+  },
+  {
+    icon: Shield,
+    title: "Ensure Transparency",
+    description:
+      "Build a blockchain-backed verification system that guarantees organic authenticity from farm to consumer, restoring trust in India's food supply chain.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Drive Sustainability",
+    description:
+      "Create an economically viable ecosystem where organic farming is profitable, sustainable practices are rewarded, and consumers access healthy food.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Build Community",
+    description:
+      "Connect a nationwide network of verified farmers, conscious consumers, trusted brands, and businesses committed to India's organic future.",
+  },
 ];
 
 export function TechLogos() {
   return (
-    <section className="relative py-8 border-t border-neutral-800/50 bg-transparent overflow-hidden">
-      <div className="container px-6 mb-4">
-        <p className="text-xs uppercase tracking-widest text-neutral-500 text-center mx-auto">
-          Technologies I Work With
-        </p>
+    <section className="relative py-20 md:py-28 overflow-hidden bg-[#0C1C13] border-y border-[rgba(255,255,255,0.03)]">
+      {/* Background glow */}
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#4E8F57]/4 blur-[120px] pointer-events-none" />
+
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+            Our Mission
+          </span>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl mx-auto">
+            Building the backbone of India&apos;s{" "}
+            <span className="text-gradient-accent">organic ecosystem</span>
+          </h2>
+          <p className="mt-4 text-sm md:text-base text-[#8A918E] max-w-xl mx-auto">
+            Every feature we build, every partnership we forge, and every farmer we onboard
+            brings us closer to a transparent, sustainable, and prosperous organic India.
+          </p>
+        </motion.div>
+
+        {/* 4 mission pillars */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          {missionPoints.map((point, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              whileHover={{ y: -3 }}
+              className="group relative p-5 md:p-6 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm hover:border-[rgba(78,143,87,0.2)] transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-lg bg-[#4E8F57]/10 border border-[rgba(78,143,87,0.15)] flex items-center justify-center mb-4 group-hover:bg-[#4E8F57]/20 transition-all duration-300">
+                <point.icon className="w-5 h-5 text-[#4E8F57]" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-2">{point.title}</h3>
+              <p className="text-sm text-[#8A918E] leading-relaxed">{point.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      <LogoLoop
-        logos={techLogos}
-        speed={80}
-        direction="left"
-        logoHeight={32}
-        gap={60}
-        hoverSpeed={0}
-        scaleOnHover
-        fadeOut
-        fadeOutColor="#0b0b0b"
-        ariaLabel="Technology stack"
-      />
     </section>
   );
 }
