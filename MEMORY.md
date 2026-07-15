@@ -1,8 +1,8 @@
 # Samhith Portfolio — Project Memory
 
 > Last updated: July 15, 2026  
-> Branch: `ashwanth`  
-> Dev server: `http://localhost:3002`
+> Branch: `main`  
+> Dev server: `http://localhost:3000`
 
 ---
 
@@ -91,9 +91,24 @@ function createRng(seed: number) {
 
 ---
 
+## 🖼 Hero Section Changes (July 15, 2026)
+
+- **Profile image** changed from `IMG_2069.JPG.jpeg` → `sangam-profile.png`
+- **Portrait shape** refactored from `rounded-full` (circular) → `rounded-2xl` (square with rounded corners)
+- Accompanying glow ring and border elements updated to match the square format
+- Old image asset (`public/assets/IMG_2069.JPG.jpeg`) deleted
+
+---
+
+## 📁 Git Ignore
+
+- Added `server.log` to `.gitignore` under a `# logs` section
+
+---
+
 ## 🧪 Dev Server
 
-- **URL:** `http://localhost:3002`
+- **URL:** `http://localhost:3000`
 - Hot reload is active — changes reflect immediately on refresh
 - If port conflicts, Next.js auto-increments to next available
 
@@ -101,10 +116,23 @@ function createRng(seed: number) {
 
 ## 🔄 Git Workflow
 
-- Remote: `https://github.com/shivaganesh9515/Samhith.git`
+- Remote (changed): `https://github.com/ashwanthreddychalla/portfolio.git`
+  - Was previously `https://github.com/shivaganesh9515/Samhith.git`
 - Main branch: `main`
 - Working branch: `ashwanth`
 - Always pull `main` before starting work, then merge/rebase into `ashwanth`
+
+### Recent Merges
+
+- **Commit `be9430c`** — "Update hero section with new profile image (sangam-profile.png) and refactor portrait styling"
+  - Committed on `ashwanth`, then fast-forward merged into `main`
+  - Pushed to old remote (`origin/main`)
+
+### Pending: Push to New Repo
+
+- Remote changed to `ashwanthreddychalla/portfolio.git`
+- Push failed with **403 Forbidden** — current Git credentials (`Ashwanthreddy-18`) don't have access
+- **Fix:** Log in as `ashwanthreddychalla` or add `Ashwanthreddy-18` as a collaborator on the new repo
 
 ---
 
