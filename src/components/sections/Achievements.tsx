@@ -70,9 +70,6 @@ const achievementCategories = [
     color: "#D97B4D",
     icon: Shield,
     items: [
-      "JPMorgan Chase — Software Engineering Lite",
-      "Goldman Sachs — Software Engineering Virtual Experience",
-      "Accenture — Data Analytics and Visualization",
       "Cyber DevX — Cybersecurity & Emerging Tech",
       "Python Programming — Beginner to Master (Udemy)",
     ],

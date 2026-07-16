@@ -33,7 +33,16 @@ const journeyMilestones = [
     color: "#4E8F57",
   },
   {
-    year: "2024",
+    year: "2025",
+    title: "Hackathons & Recognition",
+    subtitle: "Agentathon, DevFest & Hackathon Participation",
+    description:
+      "Participated in Agentathon 2025, achieving a Guinness World Record in AI. Spoke at DevFest 2025 and actively participated in multiple hackathons, showcasing innovation and technical excellence.",
+    icon: Trophy,
+    color: "#D97B4D",
+  },
+  {
+    year: "2026",
     title: "Company Registration",
     subtitle: "NEXT360 Organic Products Pvt. Ltd.",
     description:
@@ -42,38 +51,29 @@ const journeyMilestones = [
     color: "#D97B4D",
   },
   {
-    year: "2024",
+    year: "2026",
     title: "Website & Brand Launch",
     subtitle: "Digital Presence & Platform Development",
     description:
-      "Launched the NEXT360 website and brand identity. Started building the core technology stack and onboarded initial farmer and business partners across Telangana.",
+      "Launched the NEXT360 website and brand identity at next360.in. Started building the core technology stack and onboarded initial farmer and business partners across Telangana.",
     icon: Globe,
     color: "#4E8F57",
   },
   {
-    year: "2025",
-    title: "Hackathons & Recognition",
-    subtitle: "Guinness World Record & T-Hub Ideation",
-    description:
-      "Participated in Agentathon 2025, achieving a Guinness World Record in AI. Selected for T-Hub Ideation 2.0 — Hyderabad's premier startup incubation program.",
-    icon: Trophy,
-    color: "#D97B4D",
-  },
-  {
-    year: "2025",
+    year: "2026",
     title: "T-Hub Incubation",
-    subtitle: "Telangana's Startup Ecosystem",
+    subtitle: "Ideation 2.0 & Startup Ecosystem",
     description:
-      "Entered T-Hub's prestigious incubation program. Gained mentorship, funding access, and connections with investors and industry leaders in Hyderabad.",
+      "Selected for T-Hub Ideation 2.0 and entered T-Hub's prestigious incubation program. Gained mentorship, funding access, and connections with investors and industry leaders in Hyderabad, accelerating startup ecosystem expansion.",
     icon: Target,
     color: "#4E8F57",
   },
   {
-    year: "2026",
-    title: "Future Vision",
-    subtitle: "Scaling Organic Commerce Across India",
+    year: "2030",
+    title: "Vision 2030",
+    subtitle: "Pan India Organic Commerce Ecosystem",
     description:
-      "Expanding NEXT360's reach across multiple states. Building AI-powered supply chain optimization, farmer verification systems, and a nationwide organic marketplace.",
+      "Building India's most trusted organic commerce infrastructure serving millions. Scaling across the nation with global expansion beginning in Southeast Asian markets.",
     icon: Eye,
     color: "#D97B4D",
   },

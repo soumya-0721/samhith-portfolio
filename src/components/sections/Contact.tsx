@@ -46,6 +46,7 @@ export function Contact() {
             <Link
               href="https://calendly.com/samhithreddysangam"
               target="_blank"
+              rel="noopener noreferrer"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D97B4D] text-white font-semibold text-sm hover:bg-[#c96a3d] transition-all duration-300 shadow-lg shadow-[#D97B4D]/20"
             >
               <Calendar className="w-4 h-4" />
@@ -55,6 +56,7 @@ export function Contact() {
             <Link
               href="https://linkedin.com/in/samhithreddysangam"
               target="_blank"
+              rel="noopener noreferrer"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] text-[#C6C6C6] hover:text-white hover:border-white/20 transition-all duration-300 bg-[rgba(18,26,21,0.72)] backdrop-blur-sm"
             >
               <Linkedin className="w-4 h-4" />
@@ -62,7 +64,7 @@ export function Contact() {
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
-              href="mailto:samhithreddysangam@gmail.com"
+              href="mailto:ceo.office@gmail.com"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] text-[#C6C6C6] hover:text-white hover:border-white/20 transition-all duration-300 bg-[rgba(18,26,21,0.72)] backdrop-blur-sm"
             >
               <Mail className="w-4 h-4" />
@@ -89,10 +91,10 @@ export function Contact() {
                     Email
                   </p>
                   <Link
-                    href="mailto:samhithreddysangam@gmail.com"
+                    href="mailto:ceo.office@gmail.com"
                     className="text-xs md:text-sm text-[#C6C6C6] hover:text-white transition-colors"
                   >
-                    samhithreddysangam<br />@gmail.com
+                    ceo.office<br />@gmail.com
                   </Link>
                 </div>
               </div>
@@ -105,7 +107,7 @@ export function Contact() {
                   <p className="text-[10px] text-[#8A918E] uppercase tracking-wider font-medium mb-1">
                     Phone
                   </p>
-                  <p className="text-xs md:text-sm text-[#C6C6C6]">+91 (Available on Request)</p>
+                  <p className="text-xs md:text-sm text-[#C6C6C6]">+91 8008253003</p>
                 </div>
               </div>
 
@@ -120,6 +122,7 @@ export function Contact() {
                   <Link
                     href="https://next360.in"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs md:text-sm text-[#C6C6C6] hover:text-white transition-colors"
                   >
                     next360.in

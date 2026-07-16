@@ -36,7 +36,7 @@ const ventures = [
     statusColor: "#D97B4D",
     icon: Globe,
     gradient: "from-[#4E8F57]/15 to-transparent",
-    link: "#",
+    link: "https://www.mallaramgramapanchayat.com/en#home",
   },
   {
     name: "Weather AI",
@@ -47,7 +47,7 @@ const ventures = [
     statusColor: "#8A918E",
     icon: Cloud,
     gradient: "from-[#D97B4D]/15 to-transparent",
-    link: "#",
+    link: "https://www.mallaramgramapanchayat.com/en#home",
   },
 ];
 
@@ -124,7 +124,8 @@ export function Experience() {
                 {/* Explore Button */}
                 <Link
                   href={venture.link}
-                  target="_blank"
+                  target={venture.link !== "#" ? "_blank" : undefined}
+                  rel={venture.link !== "#" ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-1.5 text-xs font-medium text-[#D97B4D] hover:text-[#e8a87c] transition-colors group/link"
                 >
                   Explore

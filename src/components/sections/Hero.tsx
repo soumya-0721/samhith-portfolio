@@ -341,7 +341,7 @@ function MouseGlow() {
 
 // Stats data
 const statsData = [
-  { label: "Founded", value: 2024, suffix: "", icon: Calendar },
+  { label: "Founded", value: 2026, suffix: "", icon: Calendar },
   { label: "Projects", value: 12, suffix: "+", icon: Briefcase },
   { label: "Partnerships", value: 8, suffix: "+", icon: Users },
   { label: "Awards", value: 5, suffix: "", icon: Award },

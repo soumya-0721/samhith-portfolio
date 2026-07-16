@@ -17,6 +17,7 @@ const navLinks = [
   { name: "Achievements", href: "#achievements" },
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
+  { name: "Blog", href: "#blog" },
 ];
 
 export function Navbar() {

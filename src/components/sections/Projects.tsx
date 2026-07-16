@@ -126,16 +126,16 @@ export function Projects() {
               <h3 className="text-sm font-bold text-white">Growth Trajectory</h3>
             </div>
             <div className="flex items-end justify-between gap-1 h-[150px] pt-4">
-              <AnimatedBar height={40} label="2022" delay={0} />
-              <AnimatedBar height={70} label="2023" delay={0.1} />
-              <AnimatedBar height={110} label="2024" delay={0.2} />
-              <AnimatedBar height={150} label="2025" delay={0.3} />
-              <AnimatedBar height={100} label="2026" delay={0.4} />
+              <AnimatedBar height={40} label="2026" delay={0} />
+              <AnimatedBar height={75} label="2027" delay={0.1} />
+              <AnimatedBar height={110} label="2028" delay={0.2} />
+              <AnimatedBar height={135} label="2029" delay={0.3} />
+              <AnimatedBar height={150} label="2030" delay={0.4} />
             </div>
             <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
               <div className="flex justify-between text-[10px] text-[#8A918E]">
                 <span>Revenue Growth</span>
-                <span className="text-[#4E8F57]">+340%</span>
+                <span className="text-[#4E8F57]">Pan India Growth</span>
               </div>
             </div>
           </motion.div>

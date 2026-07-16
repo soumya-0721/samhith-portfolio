@@ -14,6 +14,7 @@ const footerLinks = [
   { name: "Achievements", href: "#achievements" },
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
+  { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -82,6 +83,7 @@ export function Footer() {
               <Link
                 href="https://github.com/samhithreddysangam"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
               >
                 <Github className="w-4 h-4" />
@@ -91,6 +93,7 @@ export function Footer() {
               <Link
                 href="https://linkedin.com/in/samhithreddysangam"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
               >
                 <Linkedin className="w-4 h-4" />
@@ -98,7 +101,7 @@ export function Footer() {
                 <ArrowUpRight className="w-3 h-3 text-[#8A918E] group-hover:text-[#D97B4D] transition-colors" />
               </Link>
               <Link
-                href="mailto:samhithreddysangam@gmail.com"
+                href="mailto:ceo.office@gmail.com"
                 className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
               >
                 <Mail className="w-4 h-4" />

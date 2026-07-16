@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Leaf, Shield, BarChart3, Link2, Users, Truck, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowUpRight, Leaf, Shield, BarChart3, Link2, Users, Truck, CheckCircle2, XCircle, Sprout, Recycle } from "lucide-react";
 import Link from "next/link";
 
 const problems = [
@@ -104,15 +104,19 @@ export function Skills() {
                     <p className="text-sm text-[#8A918E] mb-6 max-w-md">
                       Browse verified organic products directly from farmers in Telangana.
                     </p>
-                    <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto">
-                      {["Fresh Produce", "Grains & Pulses", "Spices"].map((item) => (
-                        <div
-                          key={item}
-                          className="px-3 py-2 rounded-lg bg-[rgba(78,143,87,0.1)] border border-[rgba(78,143,87,0.15)] text-xs text-[#4E8F57] font-medium"
-                        >
-                          {item}
-                        </div>
-                      ))}
+                    <div className="flex flex-wrap items-center justify-center gap-3 max-w-sm mx-auto">
+                      <div className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#4E8F57] text-white text-xs font-medium shadow-lg shadow-[#4E8F57]/20">
+                        <Leaf className="w-3.5 h-3.5" />
+                        Organic
+                      </div>
+                      <div className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#8A918E] text-xs font-medium shadow-sm">
+                        <Sprout className="w-3.5 h-3.5" />
+                        Natural
+                      </div>
+                      <div className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#8A918E] text-xs font-medium shadow-sm">
+                        <Recycle className="w-3.5 h-3.5" />
+                        Eco Friendly
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -205,6 +209,7 @@ export function Skills() {
           <Link
             href="https://next360.in"
             target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#D97B4D] text-white font-semibold text-sm hover:bg-[#c96a3d] transition-all duration-300"
           >
             Visit Website

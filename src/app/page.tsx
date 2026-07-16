@@ -9,6 +9,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Featured } from "@/components/sections/Featured";
 import { FAQ } from "@/components/sections/FAQ";
+import { Blog } from "@/components/sections/Blog";
 import { Contact } from "@/components/sections/Contact";
 import { Navbar } from "@/components/layout/Navbar";
 import { GridPattern } from "@/components/ui/grid-pattern";
@@ -46,6 +47,7 @@ export default function Home() {
           <Achievements />
           <Featured />
           <FAQ />
+          <Blog />
           <Contact />
           <Footer />
       </div>
