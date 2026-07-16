@@ -1,6 +1,6 @@
 # Samhith Portfolio — Project Memory
 
-> Last updated: July 15, 2026  
+> Last updated: July 16, 2026  
 > Branch: `ashwanth`  
 > Dev server: `http://localhost:3000`
 
@@ -91,12 +91,33 @@ function createRng(seed: number) {
 
 ---
 
-## 🖼 Hero Section Changes (July 15, 2026)
+## 🖼 Hero Section — Round 2: Premium Portrait Redesign (July 16, 2026)
 
-- **Profile image** changed from `IMG_2069.JPG.jpeg` → `sangam-profile.png`
-- **Portrait shape** refactored from `rounded-full` (circular) → `rounded-2xl` (square with rounded corners)
-- Accompanying glow ring and border elements updated to match the square format
-- Old image asset (`public/assets/IMG_2069.JPG.jpeg`) deleted
+### ❌ Removed
+- **Circular/blob green backlight** (`bg-[#4E8F57]/10 blur-[30px]`) — removed completely
+- **Square border frame** (`border-2 border-[rgba(78,143,87,0.2)]`) around portrait
+- **Decorative ring** (`inset-[-12px] rounded-2xl border`) around the image
+- **Gradient overlay** (`bg-gradient-to-t from-[#08140D]/60`) over the portrait
+- **Right-edge gradient fade** on the India map container
+- **Small shadow div** beneath the portrait (replaced with larger ambient glow)
+
+### ✅ Added / Changed
+- **Portrait size increased ~87-100% from original** (from 160/180/220px → **300/360/440px**) — now large enough to completely cover the green circle glow behind it
+- **Image mode** changed from `object-cover` → `object-contain` for transparent PNG rendering
+- **Portrait positioned toward right edge** using `ml-auto -mr-10 md:-mr-16` — overflows column for a premium breakout effect
+- **India Map repositioned** — now centered directly behind the portrait (was beside it)
+- **India Map scaled up** — container increased from 380/460/540px to 400/500/620px
+- **Green circle glow inside AnimatedIndiaMap** reduced from 350/400px → 200/240/260px and opacity reduced from `/8` → `/5` — kept small so the enlarged portrait covers it entirely
+- **Single subtle ambient green glow** extending downward: `bg-[#4E8F57]/4 blur-[120px]` — barely perceptible, no visible circular shape
+- **Soft ambient light behind portrait**: `bg-[#4E8F57]/5 blur-[100px]` and `drop-shadow(0 0 30px rgba(78,143,87,0.25))`
+- **Column wrapper** `overflow-hidden` removed so portrait can visually overflow to the right (section level `overflow-hidden` still prevents page scroll)
+
+### 🔒 Unchanged
+- Grid layout: `lg:col-span-8` (text) / `lg:col-span-4` (portrait) — left text area fully preserved
+- All left-side text, buttons, CTA links, typography
+- Statistics bar with animated counters
+- Leaf decorations, scroll indicator, mouse glow
+- `AnimatedIndiaMap` SVG component (only its internal glow size changed)
 
 ---
 
@@ -121,7 +142,7 @@ function createRng(seed: number) {
 - Working branch: `ashwanth`
 - Always pull `main` before starting work, then merge/rebase into `ashwanth`
 
-### Recent Commits (July 15, 2026)
+### Recent Commits (July 16, 2026)
 
 - `be9430c` — Update hero section with new profile image (sangam-profile.png) and refactor portrait styling
 - Both `ashwanth` and `main` branches pushed to remote

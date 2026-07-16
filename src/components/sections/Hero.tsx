@@ -139,9 +139,9 @@ function AnimatedIndiaMap() {
       onMouseLeave={handleMouseLeave}
       className="absolute inset-0 pointer-events-none overflow-hidden"
     >
-      {/* Radial green glow behind the map */}
+      {/* Subtle green backlight behind the map - kept small so the portrait covers it */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] rounded-full bg-[#4E8F57]/8 blur-[80px]" />
+        <div className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[260px] md:h-[260px] rounded-full bg-[#4E8F57]/5 blur-[80px]" />
       </div>
 
       {/* Map container with parallax */}
@@ -476,40 +476,39 @@ export function Hero() {
                 </motion.div>
               </motion.div>
 
-              {/* Right Column - Portrait with Animated India Map beside */}
+              {/* Right Column - Large Founder Portrait with India Map filling the background */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="lg:col-span-4 flex items-center justify-center relative"
               >
-                <div className="relative flex items-center justify-center w-full min-h-[220px] sm:min-h-[260px] md:min-h-[300px]">
-                  {/* Portrait - positioned on the left side */}
-                  <div className="relative z-[2] w-[160px] h-[160px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] shrink-0 ml-2 md:ml-0">
-                    {/* Green backlight glow */}
-                    <div className="absolute inset-[-10px] rounded-2xl bg-[#4E8F57]/10 blur-[30px] animate-pulse-glow" />
+                <div className="relative flex items-center justify-center w-full min-h-[300px] sm:min-h-[380px] md:min-h-[480px]">
+                  {/* India Map - large, filling the entire background behind the founder */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]">
+                    <div className="w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] md:w-[620px] md:h-[620px] overflow-hidden">
+                      <AnimatedIndiaMap />
+                    </div>
+                  </div>
 
-                    {/* Portrait - square format */}
-                    <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-[rgba(78,143,87,0.2)] shadow-2xl shadow-[#4E8F57]/10">
+                  {/* Single subtle ambient green glow extending downward toward the stats bar */}
+                  <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[350px] h-[280px] sm:w-[450px] sm:h-[320px] md:w-[550px] md:h-[380px] bg-[#4E8F57]/4 blur-[120px] rounded-full pointer-events-none z-[1]" />
+
+                  {/* Portrait - enlarged to cover the circular green glow behind */}
+                  <div className="relative z-[2] w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] md:w-[440px] md:h-[440px] shrink-0 ml-auto -mr-10 md:-mr-16">
+                    {/* Very subtle ambient light - not a visible blob, just soft glow */}
+                    <div className="absolute inset-[-30px] bg-[#4E8F57]/5 blur-[100px]" />
+
+                    {/* Portrait - transparent PNG with object-contain */}
+                    <div className="relative w-full h-full" style={{ filter: 'drop-shadow(0 0 30px rgba(78,143,87,0.25))' }}>
                       <Image
                         src="/assets/sangam-profile.png"
                         alt="Samhith Reddy Sangam"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#08140D]/60 via-transparent to-transparent" />
                     </div>
-
-                    {/* Subtle ring */}
-                    <div className="absolute inset-[-12px] rounded-2xl border border-[rgba(78,143,87,0.12)]" />
-                  </div>
-
-                  {/* India Map - positioned beside the portrait, extending to the right */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[280px] sm:w-[340px] md:w-[420px] h-[280px] sm:h-[340px] md:h-[420px] pointer-events-none z-[1] overflow-hidden">
-                    {/* Right edge fade into background */}
-                    <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#08140D] to-transparent z-10" />
-                    <AnimatedIndiaMap />
                   </div>
                 </div>
               </motion.div>
