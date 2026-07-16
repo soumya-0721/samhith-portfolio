@@ -30,6 +30,7 @@ All sections are rendered on `src/app/page.tsx` as a single-page scrolling layou
 | `achievements` | Achievements.tsx | Achievements.tsx |
 | `vision2030` | Featured.tsx (repurposed) | Featured.tsx |
 | `insights` | FAQ.tsx (repurposed) | FAQ.tsx |
+| `blog` | Blog.tsx | Blog.tsx |
 | `contact` | Contact.tsx | Contact.tsx |
 
 **Key rule:** NEVER create new section files. Always repurpose existing ones.
@@ -87,7 +88,55 @@ function createRng(seed: number) {
 
 ### Current Build Status
 
-✅ Clean build — no TypeScript or compilation errors.
+✅ Clean build — `npm run build` passes successfully.
+
+---
+
+## 🚀 Session 2: Major Content & UI Updates (July 16, 2026)
+
+### 📞 Contact Information
+- **Phone:** Updated from `+91 (Available on Request)` → `+91 8008253003`
+- **Email:** Updated from `samhithreddysangam@gmail.com` → `ceo.office@gmail.com`
+- **Files affected:** `Contact.tsx`, `Footer.tsx`
+
+### 🗓️ Company Timeline (Education.tsx)
+- Removed **2024** entries (Company Registration & Website Launch)
+- **2025** → Hackathons & Recognition (Agentathon, Guinness World Record, DevFest)
+- **2026** → Company Registration → Website & Brand Launch → T-Hub Incubation
+- **2030** → Vision 2030 (Pan India + Global Expansion)
+
+### 📈 Growth Graph (Projects.tsx)
+- Changed from `2022-2026` → `2026-2030` trajectory
+- Bottom label: "Pan India Growth"
+
+### 🌿 Marketplace Capsules (Skills.tsx)
+- Replaced `Fresh Produce / Grains & Pulses / Spices` with premium capsules:
+  - 🌿 **Organic** — Green highlighted with `Leaf` Lucide icon
+  - 🌱 **Natural** — Neutral style with `Sprout` Lucide icon
+  - ♻️ **Eco Friendly** — Neutral style with `Recycle` Lucide icon
+
+### 🏅 Certifications (Achievements.tsx)
+- **Removed:** JPMorgan Chase, Goldman Sachs, Accenture
+- **Kept:** Cyber DevX, Python Programming
+
+### 🔗 Venture Links (Experience.tsx)
+- **Gram360** → `mallaramgramapanchayat.com/en#home`
+- **Weather AI** → `mallaramgramapanchayat.com/en#home` (temporary)
+- **Slick Solutions** → Kept `#` but removed `target="_blank"` (no blank tab)
+
+### 🛡️ External Link Security
+- Added `rel="noopener noreferrer"` to all external `target="_blank"` links across `Contact.tsx`, `Footer.tsx`, `Experience.tsx`, `Skills.tsx`
+
+### 📝 Blog Section (New)
+- **Created:** `src/components/sections/Blog.tsx`
+- **Nav:** Added "Blog" in `Navbar.tsx` and `Footer.tsx` after "Insights"
+- **Page:** Rendered between `<FAQ />` and `<Contact />` in `page.tsx`
+- **Design:** 6 placeholder cards with glassmorphism, Framer Motion, category badges, Read More buttons
+- **Content:** Placeholder only — ready for real articles
+
+### 🦸 Hero Section Fixes
+- **"View NEXT360" button:** Changed from internal `#next360` scroll → opens `https://next360.in` in new tab with `target="_blank"` + `rel="noopener noreferrer"`
+- **Founded stat:** Updated from `2024` → `2026` (consistent with new timeline)
 
 ---
 
@@ -124,6 +173,7 @@ function createRng(seed: number) {
 ## 📁 Git Ignore
 
 - Added `server.log` to `.gitignore` under a `# logs` section
+- Added `nul` to `.gitignore` (Windows artifact)
 
 ---
 
@@ -145,6 +195,9 @@ function createRng(seed: number) {
 ### Recent Commits (July 16, 2026)
 
 - `be9430c` — Update hero section with new profile image (sangam-profile.png) and refactor portrait styling
+- `1fedb18` — Update portfolio: contact info, timeline, growth graph, marketplace capsules, certifications, venture links, and add Blog section
+- `3e8cf35` — Fix Hero View NEXT360 button to open next360.in in new tab
+- `7fdea35` — Add nul to .gitignore
 - Both `ashwanth` and `main` branches pushed to remote
 - PR link: https://github.com/shivaganesh9515/Samhith/compare/main...ashwanth?expand=1
 
