@@ -452,7 +452,9 @@ export function Hero() {
                   className="flex flex-col sm:flex-row items-center gap-3"
                 >
                   <Link
-                    href="#next360"
+                    href="https://next360.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#D97B4D] text-white font-semibold text-sm hover:bg-[#c96a3d] transition-all duration-300 shadow-lg shadow-[#D97B4D]/20"
                   >
                     View NEXT360
