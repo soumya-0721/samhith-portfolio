@@ -32,7 +32,7 @@ const achievementCategories = [
     items: [
       "National Seva Internship Cell Lead – INDGenius",
       "Executive Member – Indian Concrete Institute (ICI)",
-      "Class Representative – Civil Engineering (2019–2022)",
+      "Class Representative – Civil Engineering, S.R. University",
     ],
   },
   {

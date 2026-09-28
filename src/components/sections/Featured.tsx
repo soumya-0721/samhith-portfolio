@@ -9,7 +9,7 @@ const roadmapMilestones = [
     title: "Foundation & Scale",
     subtitle: "Consolidate & Expand",
     description:
-      "Scale NEXT360 across Telangana with 100+ farmer partners. Launch mobile app and AI-powered quality verification system.",
+      "Consolidate NEXT360 across Telangana with a target of 100+ farmer partners, and launch the mobile app and AI-powered quality verification — technology for farmers, built around how farms already work.",
     icon: Target,
     color: "#B66F4A",
     status: "current",
@@ -19,7 +19,7 @@ const roadmapMilestones = [
     title: "Regional Expansion",
     subtitle: "South India Presence",
     description:
-      "Expand operations to Andhra Pradesh, Karnataka, and Tamil Nadu. Establish regional collection and distribution hubs.",
+      "Extend the organic ecosystem into Andhra Pradesh, Karnataka and Tamil Nadu, with regional collection and distribution hubs that keep the farm-to-consumer chain short.",
     icon: Globe,
     color: "#6F8F68",
     status: "upcoming",
@@ -29,7 +29,7 @@ const roadmapMilestones = [
     title: "Technology Platform",
     subtitle: "AI & Blockchain Integration",
     description:
-      "Full blockchain integration for supply chain transparency. AI-driven demand forecasting and automated logistics optimization.",
+      "Planned full blockchain integration so every organic product can carry a verifiable supply chain record, with AI-driven demand forecasting and automated logistics — the agriculture innovation layer underneath it.",
     icon: Zap,
     color: "#B66F4A",
     status: "upcoming",
@@ -39,7 +39,7 @@ const roadmapMilestones = [
     title: "National Presence",
     subtitle: "Pan-India Operations",
     description:
-      "Operations across 10+ states with 10,000+ farmer partners. Launch B2B wholesale marketplace alongside D2C platform.",
+      "Aim for operations across 10+ states with 10,000+ farmer partners, and a B2B wholesale marketplace alongside the direct-to-consumer platform.",
     icon: Users,
     color: "#6F8F68",
     status: "upcoming",
@@ -49,7 +49,7 @@ const roadmapMilestones = [
     title: "Vision Realized",
     subtitle: "India's Organic Commerce Backbone",
     description:
-      "India's most trusted organic commerce infrastructure serving millions. Global expansion beginning with Southeast Asian markets.",
+      "The ambition: a transparent backbone for India's organic products ecosystem — farmers keeping more of what they grow, social responsibility sitting with the people who grow the food, and expansion beginning with Southeast Asian markets.",
     icon: Rocket,
     color: "#B66F4A",
     status: "upcoming",
@@ -76,7 +76,10 @@ export function Featured() {
             <span className="text-gradient-accent">2030</span>
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            A bold roadmap to transform India's organic commerce landscape — one milestone at a time.
+            A bold roadmap for a stronger, more connected agricultural ecosystem — where digital agriculture
+            and responsible technology work for farmers, and organic products reach consumers through a
+            supply chain anyone can trace. The 2030 ambition: farmer empowerment through technology, and a
+            future-ready Bharat built on sustainable agriculture.
           </p>
         </div>
 
@@ -166,10 +169,12 @@ export function Featured() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-sm text-[#85857E] mb-4">The journey is just beginning.</p>
+          <p className="text-sm text-[#85857E] mb-4">
+            Digitalising our roots, not replacing them — the journey is just beginning.
+          </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E3EBDD] border border-[#C8D5C2]">
             <Leaf className="w-4 h-4 text-[#6F8F68]" />
-            <span className="text-xs text-[#6F8F68] font-medium">Sustainable Growth • Technology First • India First</span>
+            <span className="text-xs text-[#6F8F68] font-medium">Entrepreneurship and Innovation • Future-Ready Bharat</span>
           </div>
         </motion.div>
       </div>

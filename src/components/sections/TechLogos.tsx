@@ -14,7 +14,7 @@ const missionPoints = [
     icon: Shield,
     title: "Ensure Transparency",
     description:
-      "Build a blockchain-backed verification system that guarantees organic authenticity from farm to consumer, restoring trust in India's food supply chain.",
+      "Build a verification system that supports organic authenticity from farm to consumer, restoring trust in India's food supply chain. Blockchain-backed records are on the roadmap.",
   },
   {
     icon: TrendingUp,
@@ -26,7 +26,7 @@ const missionPoints = [
     icon: HeartHandshake,
     title: "Build Community",
     description:
-      "Connect a nationwide network of verified farmers, conscious consumers, trusted brands, and businesses committed to India's organic future.",
+      "Connect farmers, conscious consumers, brands, and businesses through transparent, technology-backed relationships across India's organic ecosystem.",
   },
 ];
 

@@ -1,11 +1,13 @@
-export const SITE_URL = "https://ceo-six-mu.vercel.app";
+export const SITE_URL = "https://samhithreddysangam.portfolio.next360.in/";
+
+export const SITE_ORIGIN = SITE_URL.replace(/\/$/, "");
 
 export const site = {
-  name: "Samhith Reddy Sangam",
-  shortName: "Samhith Reddy Sangam",
-  title: "Samhith Reddy Sangam | Founder & CEO, NEXT360 Organic Products Pvt. Ltd.",
+  name: "SamhithReddy Sangam",
+  shortName: "SamhithReddy Sangam",
+  title: "SamhithReddy Sangam | Founder & CEO, NEXT360 Organic Products Pvt. Ltd.",
   description:
-    "Samhith Reddy Sangam is a Civil Engineer turned Tech Founder and Founder & CEO of NEXT360 Organic Products Pvt. Ltd., building India's trusted organic commerce infrastructure. T-Hub incubated entrepreneur, Guinness World Record holder (Agentathon 2025) and DevFest 2025 speaker, based in Karimnagar, Telangana, India.",
+    "SamhithReddy Sangam is a Civil Engineer turned Tech Founder and Founder & CEO of NEXT360 Organic Products Pvt. Ltd., building India's organic commerce infrastructure. T-Hub incubated entrepreneur, Guinness World Record holder (Agentathon 2025) and DevFest 2025 speaker, based in Karimnagar, Telangana, India.",
   locale: "en_IN",
   location: {
     city: "Karimnagar",
@@ -20,20 +22,31 @@ export const site = {
     next360: "https://next360.in",
   },
   keywords: [
+    "SamhithReddy Sangam",
+    "SamhithReddy entrepreneur",
+    "SamhithReddy founder",
+    "SamhithReddy Next360",
     "Samhith Reddy Sangam",
-    "Samhithreddy Sangam",
     "samhithreddy sangam",
     "Samhith Reddy",
-    "Samhith Reddy Sangam NEXT360",
-    "Samhith Reddy Sangam founder",
-    "Samhith Reddy Sangam CEO",
     "Samhith Sangam",
-    "Samhith Reddy portfolio",
+    "Next360 Organic Products founder",
+    "young entrepreneur India",
+    "technology entrepreneur India",
+    "agriculture technology entrepreneur",
+    "digitalising agriculture",
+    "technology for farmers",
+    "organic products entrepreneur",
+    "agriculture innovation India",
+    "sustainable agriculture",
+    "digital agriculture",
+    "farmer empowerment through technology",
+    "SamhithReddy Sangam Karimnagar",
+    "SamhithReddy Sangam Telangana",
     "NEXT360",
     "NEXT360 Organic Products",
     "NEXT360 founder",
-    "Samhith Reddy Sangam Karimnagar",
-    "Samhith Reddy Sangam Telangana",
+    "SamhithReddy portfolio",
     "Civil Engineer turned Founder",
     "T-Hub incubated founder",
     "organic commerce India",

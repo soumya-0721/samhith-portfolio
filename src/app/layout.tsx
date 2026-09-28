@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
-import { SITE_URL, site } from "@/lib/site";
+import { SITE_ORIGIN, SITE_URL, site } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     locale: site.locale,
     images: [
       {
-        url: "/assets/samhith.png",
-        width: 1403,
-        height: 1121,
-        alt: `${site.name} — Founder & CEO, NEXT360 Organic Products Pvt. Ltd.`,
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SamhithReddy Sangam — Founder & CEO of NEXT360 Organic Products",
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: ["/assets/samhith.png"],
+    images: ["/assets/og-image.png"],
     creator: "@samhithreddysangam",
   },
   robots: {
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${SITE_URL}/#person`,
+  "@id": `${SITE_ORIGIN}/#person`,
   name: site.name,
   alternateName: [
-    "Samhithreddy Sangam",
+    "Samhith Reddy Sangam",
     "Samhith Reddy",
     "Samhith Sangam",
   ],
-  url: SITE_URL,
+  url: SITE_ORIGIN,
   email: `mailto:${site.email}`,
   jobTitle: "Founder & CEO",
   description: site.description,
@@ -120,11 +120,11 @@ const personSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  url: SITE_URL,
+  "@id": `${SITE_ORIGIN}/#website`,
+  url: SITE_ORIGIN,
   name: site.name,
   inLanguage: "en-IN",
-  publisher: { "@id": `${SITE_URL}/#person` },
+  publisher: { "@id": `${SITE_ORIGIN}/#person` },
 };
 
 export default function RootLayout({

@@ -5,49 +5,55 @@ import { ArrowUpRight, Leaf, Shield, BarChart3, Link2, Users, Truck, CheckCircle
 import Link from "next/link";
 
 const problems = [
-  "Fragmented supply chain with multiple intermediaries",
+  "Fragmented supply chains with intermediaries between farm and consumer",
   "No transparent pricing for farmers or consumers",
-  "Lack of trust in organic product verification",
+  "No reliable way to verify organic product claims from one end of the chain to the other",
   "Limited market access for small farmers",
 ];
 
 const solutions = [
-  "Direct farm-to-consumer technology platform",
-  "Blockchain-backed transparency & verification",
-  "AI-powered quality assessment & grading",
-  "Real-time marketplace with fair pricing",
+  "A farmer-to-consumer connection built on digital agriculture",
+  "A transparent supply chain with end-to-end traceability, and blockchain-backed verification planned as the platform scales",
+  "AI-powered quality assessment and grading for organic products",
+  "Real-time marketplace with transparent pricing for both sides",
 ];
 
 const features = [
   {
     icon: Leaf,
     title: "Farmer Verification",
-    description: "AI-driven verification system for organic farming practices and certifications.",
+    description:
+      "AI-driven verification of organic farming practices and certifications, recorded digitally for traceability.",
   },
   {
     icon: Shield,
     title: "Quality Assurance",
-    description: "End-to-end quality tracking from farm to delivery with blockchain records.",
+    description:
+      "End-to-end traceability from farm to delivery, with every handling step recorded. Blockchain-backed records are planned as the platform scales.",
   },
   {
     icon: BarChart3,
     title: "Market Intelligence",
-    description: "Real-time pricing data, demand forecasting, and market trends for farmers.",
+    description:
+      "Real-time pricing data, demand forecasting, and market trends that give farmers clearer visibility into the market they grow for.",
   },
   {
     icon: Link2,
     title: "Supply Chain",
-    description: "Direct producer-to-consumer pipeline eliminating middlemen and reducing costs.",
+    description:
+      "A transparent supply chain: a direct producer-to-consumer pipeline that removes intermediaries and reduces costs.",
   },
   {
     icon: Users,
     title: "Community Network",
-    description: "Verified network of farmers, brands, businesses, and conscious consumers.",
+    description:
+      "A verified network of farmers, brands, businesses, and conscious consumers held together by shared digital records.",
   },
   {
     icon: Truck,
     title: "Logistics Hub",
-    description: "Optimized collection and delivery network across Telangana and expanding.",
+    description:
+      "Optimized collection and delivery of organic products across Telangana and expanding.",
   },
 ];
 
@@ -70,8 +76,9 @@ export function Skills() {
             <span className="text-gradient-accent">NEXT360</span> Organic Products
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            India&apos;s trusted organic commerce infrastructure — connecting farmers, brands, and
-            consumers through technology and transparency.
+            A digital agriculture platform founded and led by SamhithReddy Sangam, Founder &amp;
+            CEO of NEXT360 Organic Products Pvt. Ltd. — connecting farmers, brands, and
+            consumers through a transparent supply chain and end-to-end traceability.
           </p>
         </div>
 
@@ -102,7 +109,8 @@ export function Skills() {
                       NEXT360 Marketplace
                     </h3>
                     <p className="text-sm text-[#85857E] mb-6 max-w-md">
-                      Browse verified organic products directly from farmers in Telangana.
+                      Browse verified organic products directly from farmers in Telangana, with
+                      quality records carried from farm to delivery.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3 max-w-sm mx-auto">
                       <div className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#6F8F68] text-white text-xs font-medium shadow-lg shadow-[#6F8F68]/20">
@@ -176,7 +184,7 @@ export function Skills() {
         {/* Features Grid */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-[#263129] mb-8 text-center">
-            Platform Features
+            Technology for Farmers
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((feature, idx) => (

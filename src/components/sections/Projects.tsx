@@ -4,40 +4,41 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { TrendingUp, Users, Leaf, DollarSign, Handshake, MapPin, BarChart3 } from "lucide-react";
 
+// Capability categories — not metrics
 const impactStats = [
   {
-    value: "₹0",
-    label: "Revenue Generated",
+    value: "Fair Pricing",
+    label: "For Every Farmer",
     icon: DollarSign,
     color: "#6F8F68",
   },
   {
-    value: "0",
-    label: "Farmers Empowered",
+    value: "Direct Access",
+    label: "To Markets",
     icon: Users,
     color: "#B66F4A",
   },
   {
-    value: "0",
-    label: "Platform Users",
+    value: "Organic",
+    label: "Product Verification",
     icon: Leaf,
     color: "#6F8F68",
   },
   {
-    value: "0",
-    label: "Brand Partners",
+    value: "Brands",
+    label: "And Businesses",
     icon: Handshake,
     color: "#B66F4A",
   },
   {
-    value: "0",
-    label: "Projects Delivered",
+    value: "Traceability",
+    label: "Across The Chain",
     icon: BarChart3,
     color: "#6F8F68",
   },
   {
-    value: "0",
-    label: "States Reached",
+    value: "Telangana",
+    label: "Where We Operate",
     icon: MapPin,
     color: "#B66F4A",
   },
@@ -79,11 +80,12 @@ export function Projects() {
             Impact
           </span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            Measurable{" "}
+            How We Create{" "}
             <span className="text-gradient-accent">Impact</span>
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            Real numbers, real change — tracking the growth of our ecosystem across India.
+            The capabilities we are building — direct farmer access, verified organic
+            products, and end-to-end traceability, starting in Telangana.
           </p>
         </div>
 
@@ -123,7 +125,7 @@ export function Projects() {
           >
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp className="w-4 h-4 text-[#6F8F68]" />
-              <h3 className="text-sm font-bold text-[#263129]">Growth Trajectory</h3>
+              <h3 className="text-sm font-bold text-[#263129]">Roadmap Trajectory</h3>
             </div>
             <div className="flex items-end justify-between gap-1 h-[150px] pt-4">
               <AnimatedBar height={4} label="2026" delay={0} />
@@ -134,8 +136,8 @@ export function Projects() {
             </div>
             <div className="mt-3 pt-3 border-t border-[#D9CBBE]/70">
               <div className="flex justify-between text-[10px] text-[#85857E]">
-                <span>Revenue Growth</span>
-                <span className="text-[#6F8F68]">Pan India Growth</span>
+                <span>Trajectory</span>
+                <span className="text-[#6F8F68]">Telangana &rarr; Pan-India</span>
               </div>
             </div>
           </motion.div>

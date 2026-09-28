@@ -4,43 +4,7 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { ArrowUpRight, Calendar, Award, Users, Globe, Briefcase } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useEffect, useState, useMemo, useCallback } from "react";
-
-// Animated Counter
-function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const [hasStarted, setHasStarted] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasStarted(true);
-          if (ref.current) observer.unobserve(ref.current);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-    let startTime: number;
-    const animate = (time: number) => {
-      if (!startTime) startTime = time;
-      const progress = Math.min((time - startTime) / (duration * 1000), 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easeOut * end));
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  }, [hasStarted, end, duration]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
+import { useRef, useMemo, useCallback } from "react";
 
 // Premium Animated India Map — thousands of glowing dots behind the portrait
 function AnimatedIndiaMap() {
@@ -234,14 +198,14 @@ function LeafDecoration({ className }: { className: string }) {
   );
 }
 
-// Stats data
+// Stats data — factual descriptors, not metrics
 const statsData = [
-  { label: "Founded", value: 2026, suffix: "", icon: Calendar },
-  { label: "Projects", value: 12, suffix: "+", icon: Briefcase },
-  { label: "Partnerships", value: 8, suffix: "+", icon: Users },
-  { label: "Awards", value: 5, suffix: "", icon: Award },
-  { label: "Team", value: 15, suffix: "+", icon: Users },
-  { label: "Countries", value: 2, suffix: "", icon: Globe },
+  { label: "Founded", value: "2026", icon: Calendar },
+  { label: "Venture", value: "NEXT360", icon: Briefcase },
+  { label: "Approach", value: "Farmer-Led", icon: Users },
+  { label: "Vision 2030", value: "Bharat", icon: Award },
+  { label: "Focus", value: "AgriTech", icon: Users },
+  { label: "Supply Chain", value: "Organic", icon: Globe },
 ];
 
 export function Hero() {
@@ -292,9 +256,9 @@ export function Hero() {
 
                 {/* Name */}
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-3">
-                  <span className="text-[#263129]">SAMHITH</span>
+                  <span className="text-[#263129] uppercase">Samhith</span>
                   <br />
-                  <span className="text-gradient-accent">REDDY SANGAM</span>
+                  <span className="text-gradient-accent uppercase">Reddy Sangam</span>
                 </h1>
 
                 {/* Title */}
@@ -320,7 +284,7 @@ export function Hero() {
                   transition={{ delay: 0.5 }}
                   className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 max-w-3xl"
                 >
-                  Building India&apos;s Trusted{" "}
+                  Building India&apos;s{" "}
                   <span className="text-gradient-accent">Organic Commerce</span>{" "}
                   Infrastructure.
                 </motion.h2>
@@ -362,7 +326,7 @@ export function Hero() {
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                   <a
-                    href="https://ceo-six-mu.vercel.app/"
+                    href="https://calendly.com/samhithreddysangam"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-[#CBBCAF] text-[#4D554E] hover:bg-[#E8DCCE] hover:border-[#BBA999] hover:text-[#263129] transition-all duration-300 bg-transparent backdrop-blur-sm"
@@ -394,7 +358,7 @@ export function Hero() {
                     <div className="relative w-full h-full">
                       <Image
                         src="/assets/samhith.png"
-                        alt="Samhith Reddy Sangam"
+                        alt="SamhithReddy Sangam"
                         fill
                         className="object-contain"
                         priority
@@ -428,7 +392,7 @@ export function Hero() {
                     <stat.icon className="w-3.5 h-3.5 text-[#B66F4A]/50" />
                   </div>
                   <div className="text-lg md:text-xl font-bold text-[#263129]">
-                    <CountUp end={stat.value} suffix={stat.suffix} />
+                    {stat.value}
                   </div>
                   <div className="text-[10px] text-[#85857E] uppercase tracking-wider mt-0.5">
                     {stat.label}

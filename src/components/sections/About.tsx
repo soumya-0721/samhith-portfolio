@@ -26,7 +26,7 @@ const glassCards = [
     icon: Eye,
     title: "Vision",
     description:
-      "A future where every farmer in India has equal access to digital infrastructure, enabling sustainable livelihoods and a healthier nation through organic products.",
+      "A future-ready Bharat where every farmer in India has equal access to digital infrastructure — farmer empowerment, sustainable agriculture, and a healthier nation through organic products.",
   },
   {
     icon: Users,
@@ -82,18 +82,31 @@ export function About() {
               {/* Founder Story — full width, no portrait */}
               <div className="text-[#62665F] leading-relaxed space-y-6 max-w-4xl">
                 <p className="text-base md:text-lg">
-                  I am <strong className="text-[#263129]">Samhithreddy Sangam</strong>, a Civil Engineer turned
-                  Tech Founder on a mission to transform India&apos;s organic commerce landscape. My
-                  journey began with a simple realization — that the same systems-thinking I applied to
-                  structural engineering could revolutionize how India grows, distributes, and consumes
-                  organic products.
+                  I am <strong className="text-[#263129]">SamhithReddy Sangam</strong>, a young entrepreneur
+                  from Telangana. I trained as a Civil Engineer, and engineering is still how I think: a
+                  structure is only as strong as its weakest connection, and it is judged by what happens
+                  under load. I ended up building software instead of buildings, and found the same logic
+                  waiting in farming. Soil, crop, harvest, market — each stage holds up the next, and one
+                  broken link undoes the effort of everyone who worked before it.
                 </p>
                 <p className="text-base md:text-lg">
-                  Today, as Founder & CEO of{" "}
-                  <strong className="text-[#263129]">NEXT360 Organic Products Pvt. Ltd.</strong>, I lead a
-                  team building technology that connects verified farmers, trusted brands, businesses,
-                  and consumers through transparency, sustainability, and innovation. Every solution
-                  we build is a step toward empowering India&apos;s agricultural backbone.
+                  That is the work I do now. As Founder &amp; CEO of{" "}
+                  <strong className="text-[#263129]">NEXT360 Organic Products Pvt. Ltd.</strong>, I build the
+                  technology that carries an organic product honestly from one end to the other — who grew
+                  it, what was added, when it was harvested, who handled it next. Transparency and
+                  traceability sit in the record rather than in a brochure. Farmers reach buyers without a
+                  chain of intermediaries deciding their price, and a consumer can see exactly what they are
+                  buying. Each of those is an innovation problem before it is a business problem.
+                </p>
+                <p className="text-base md:text-lg">
+                  I call the approach{" "}
+                  <strong className="text-[#263129]">Digitalising our roots</strong>. Technology for farmers
+                  should not mean replacing what they already know — what to sow, when to harvest, how to
+                  hold a field through a dry month. India&apos;s organic ecosystem rests on that kind of
+                  practical knowledge, passed down for generations, and digitalising agriculture means
+                  carrying it forward rather than flattening it. So the work reduces to a simple line:
+                  farmer empowerment through technology, built so that sustainable agriculture becomes the
+                  default for the small farmer and the everyday buyer rather than the exception.
                 </p>
               </div>
             </motion.div>
@@ -140,7 +153,6 @@ export function About() {
                 <div className="space-y-1 text-sm text-[#62665F]">
                   <div className="font-medium text-[#263129]">S.R. University</div>
                   <div>B.Tech Civil Engineering</div>
-                  <div className="text-[#85857E]">2026</div>
                 </div>
               </div>
               <div>

@@ -73,7 +73,7 @@ const journeyMilestones = [
     title: "Vision 2030",
     subtitle: "Pan India Organic Commerce Ecosystem",
     description:
-      "Building India's most trusted organic commerce infrastructure serving millions. Scaling across the nation with global expansion beginning in Southeast Asian markets.",
+      "Building India's organic commerce infrastructure with transparent, traceable supply chains. Scaling across the nation with global expansion beginning in Southeast Asian markets.",
     icon: Eye,
     color: "#B66F4A",
   },

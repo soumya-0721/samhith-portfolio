@@ -9,7 +9,7 @@ const ventures = [
     name: "NEXT360",
     tagline: "Organic Products Pvt. Ltd.",
     description:
-      "India's trusted organic commerce platform connecting verified farmers directly to consumers and businesses. Blockchain-backed transparency from farm to table.",
+      "Where technology, agriculture and organic products meet. NEXT360 Organic Products Pvt. Ltd. — founded by agriculture technology entrepreneur SamhithReddy Sangam — connects verified farmers directly to consumers and businesses, with a transparent supply chain and end-to-end traceability from farm to table. Blockchain-backed product records are on the roadmap.",
     status: "Active",
     statusColor: "#6F8F68",
     icon: Leaf,
@@ -70,8 +70,8 @@ export function Experience() {
             <span className="text-gradient-accent">Industries</span>
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            From organic commerce to climate intelligence — each venture is a step toward
-            a more sustainable, technology-driven future.
+            From organic commerce to climate intelligence — each venture applies technology to
+            agriculture and organic products, and to the farmers who grow them.
           </p>
         </div>
 

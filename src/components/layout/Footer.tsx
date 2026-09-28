@@ -47,7 +47,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-[#85857E] max-w-xs leading-relaxed">
-              Building India&apos;s trusted organic commerce infrastructure through technology,
+              Building India&apos;s organic commerce infrastructure through technology,
               transparency, and sustainability.
             </p>
           </div>
@@ -127,7 +127,7 @@ export function Footer() {
         {/* Divider */}
         <div className="mt-8 pt-6 border-t border-[#D9CBBE]/60 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#85857E]">
-            &copy; {currentYear} Samhith Reddy Sangam. All rights reserved.
+            &copy; {currentYear} SamhithReddy Sangam. All rights reserved.
           </p>
           <p className="text-xs text-[#85857E]">
             Built with purpose in India
