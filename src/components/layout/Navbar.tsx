@@ -19,15 +19,16 @@ const navLinks = [
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
   { name: "Blog", href: "#blog" },
+  { name: "Profile", href: "/samhithreddysangam" },
   { name: "Gallery", href: "/gallery" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
-  const isGallery = pathname === "/gallery";
+  const isHome = pathname === "/";
   const [activeSection, setActiveSection] = useState(() => {
     if (typeof window !== "undefined") {
-      if (window.location.pathname === "/gallery") return "/gallery";
+      if (window.location.pathname !== "/") return window.location.pathname;
       const hash = window.location.hash;
       if (hash) return hash;
     }
@@ -38,13 +39,13 @@ export function Navbar() {
 
   // Sync active state with route changes
   useEffect(() => {
-    if (isGallery) {
-      setActiveSection("/gallery");
-    } else {
+    if (isHome) {
       const hash = window.location.hash;
       if (hash) setActiveSection(hash);
+    } else {
+      setActiveSection(pathname);
     }
-  }, [pathname, isGallery]);
+  }, [pathname, isHome]);
 
   // Handle Smooth Scroll for Desktop & Mobile
   const handleScroll = useCallback((href: string) => {
@@ -52,6 +53,11 @@ export function Navbar() {
     setActiveSection(href);
     if (href.startsWith("/")) {
       // Route navigation — handled by Link/anchor default
+      return;
+    }
+    if (!isHome) {
+      // Off the homepage (gallery, blog articles) — go home with the hash
+      window.location.assign(`/${href}`);
       return;
     }
     if (href === "#") {
@@ -62,7 +68,7 @@ export function Navbar() {
             lenis?.scrollTo(element as HTMLElement, { offset: -100 });
         }
     }
-  }, [lenis]);
+  }, [lenis, isHome]);
 
   // Listen for hash changes (e.g. browser back/forward)
   useEffect(() => {
@@ -171,14 +177,14 @@ export function Navbar() {
                transition={{ delay: 0.2 }}
                className="hidden md:block"
              >
-                <a 
-                    href="#contact" 
-                    onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
-                    className="group flex items-center gap-2 bg-[#B66F4A] text-white px-5 py-2.5 rounded-full font-semibold hover:bg-[#985938] transition-colors shadow-lg shadow-[#B66F4A]/20"
+                <Link
+                  href="/#contact"
+                  onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
+                  className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#263129] text-[#F4EADF] text-xs font-medium hover:bg-[#3a473c] transition-colors"
                 >
                    Contact
                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                </Link>
              </motion.div>
 
              {/* Mobile Menu Toggle */}
@@ -246,9 +252,9 @@ export function Navbar() {
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ delay: 0.6 }}
-                     href="#contact"
-                     onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
-                     className="flex items-center gap-2 text-xl font-bold text-white"
+                      href="/#contact"
+                      onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
+                      className="flex items-center gap-2 text-xl font-bold text-white"
                   >
                       Get in Touch <ArrowUpRight className="w-5 h-5" />
                   </motion.a>

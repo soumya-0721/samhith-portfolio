@@ -256,9 +256,10 @@ export function Hero() {
 
                 {/* Name */}
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-3">
-                  <span className="text-[#263129] uppercase">Samhith</span>
+                  <span className="text-[#263129] uppercase">Samhith </span>
                   <br />
                   <span className="text-gradient-accent uppercase">Reddy Sangam</span>
+                  <span className="sr-only">Samhith Reddy Sangam, Founder and CEO of NEXT360 Organic Products Pvt. Ltd.</span>
                 </h1>
 
                 {/* Title */}
@@ -358,7 +359,7 @@ export function Hero() {
                     <div className="relative w-full h-full">
                       <Image
                         src="/assets/samhith.png"
-                        alt="SamhithReddy Sangam"
+                        alt="Samhith Reddy Sangam, Founder and CEO of NEXT360 Organic Products"
                         fill
                         className="object-contain"
                         priority

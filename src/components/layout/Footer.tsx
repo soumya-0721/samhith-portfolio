@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Github, Linkedin, Mail, Leaf, ArrowUpRight } from "lucide-react";
 import { useLenis } from "lenis/react";
 
@@ -15,6 +16,7 @@ const footerLinks = [
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
   { name: "Blog", href: "#blog" },
+  { name: "Profile", href: "/samhithreddysangam" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "#contact" },
 ];
@@ -22,8 +24,15 @@ const footerLinks = [
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const lenis = useLenis();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const handleScroll = (href: string) => {
+    if (!isHome) {
+      // Off the homepage (gallery, blog articles) — go home with the hash
+      window.location.assign(`/${href}`);
+      return;
+    }
     if (href === "#") {
       lenis?.scrollTo(0);
     } else {
@@ -127,7 +136,7 @@ export function Footer() {
         {/* Divider */}
         <div className="mt-8 pt-6 border-t border-[#D9CBBE]/60 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#85857E]">
-            &copy; {currentYear} SamhithReddy Sangam. All rights reserved.
+            &copy; {currentYear} Samhith Reddy Sangam. All rights reserved.
           </p>
           <p className="text-xs text-[#85857E]">
             Built with purpose in India

@@ -76,7 +76,7 @@ export function Skills() {
             <span className="text-gradient-accent">NEXT360</span> Organic Products
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            A digital agriculture platform founded and led by SamhithReddy Sangam, Founder &amp;
+            A digital agriculture platform founded and led by Samhith Reddy Sangam, Founder &amp;
             CEO of NEXT360 Organic Products Pvt. Ltd. — connecting farmers, brands, and
             consumers through a transparent supply chain and end-to-end traceability.
           </p>

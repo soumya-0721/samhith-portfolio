@@ -82,7 +82,7 @@ export function About() {
               {/* Founder Story — full width, no portrait */}
               <div className="text-[#62665F] leading-relaxed space-y-6 max-w-4xl">
                 <p className="text-base md:text-lg">
-                  I am <strong className="text-[#263129]">SamhithReddy Sangam</strong>, a young entrepreneur
+                  I am <strong className="text-[#263129]">Samhith Reddy Sangam</strong>, a young entrepreneur
                   from Telangana. I trained as a Civil Engineer, and engineering is still how I think: a
                   structure is only as strong as its weakest connection, and it is judged by what happens
                   under load. I ended up building software instead of buildings, and found the same logic

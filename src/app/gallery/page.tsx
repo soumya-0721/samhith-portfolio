@@ -5,7 +5,7 @@ import { GalleryClient } from "./GalleryClient";
 const title = `${site.name} | Gallery`;
 
 const description =
-  "A visual gallery of entrepreneur SamhithReddy Sangam, Founder & CEO of NEXT360 Organic Products — a journey in technology, agriculture and the organic ecosystem.";
+  "A visual gallery of entrepreneur Samhith Reddy Sangam, Founder & CEO of NEXT360 Organic Products — a journey in technology, agriculture and the organic ecosystem.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SamhithReddy Sangam — Gallery: the professional journey behind NEXT360 Organic Products",
+        alt: "Samhith Reddy Sangam — Gallery: the professional journey behind NEXT360 Organic Products",
       },
     ],
   },

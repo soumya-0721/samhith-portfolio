@@ -3,64 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock, Calendar, FileText, BookOpen, Tag } from "lucide-react";
 import Link from "next/link";
-
-// Placeholder blog post data — replace with real content later
-const placeholderPosts = [
-  {
-    title: "Blog Post Title Will Appear Here",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#6F8F68",
-  },
-  {
-    title: "Another Interesting Blog Topic Coming Soon",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#B66F4A",
-  },
-  {
-    title: "A Third Article Title to Be Published Later",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#6F8F68",
-  },
-  {
-    title: "Fourth Blog Entry — Placeholder for Future Content",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#B66F4A",
-  },
-  {
-    title: "Fifth Article Placeholder — Ready for Your Writing",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#6F8F68",
-  },
-  {
-    title: "Sixth Blog Post — Structure Complete, Content Pending",
-    category: "Category",
-    date: "Month DD, YYYY",
-    readTime: "X min read",
-    excerpt:
-      "A short description of the blog post will go here. This placeholder text gives you an idea of how the final content will look in this card layout.",
-    color: "#B66F4A",
-  },
-];
+import { posts, furtherCoverage, sourceIndex, formatDate, readingTime } from "@/lib/blog";
 
 export function Blog() {
   return (
@@ -83,16 +26,17 @@ export function Blog() {
             <span className="text-gradient-accent">Insights</span>
           </h2>
           <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
-            Thoughts on technology, agriculture, entrepreneurship, and the
-            journey of building India&apos;s organic commerce future.
+            Field notes from building digital infrastructure in rural India —{" "}
+            village governance, AI engineering under pressure, and the organic
+            commerce work behind NEXT360.
           </p>
         </div>
 
         {/* Blog Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {placeholderPosts.map((post, idx) => (
+          {posts.map((post, idx) => (
             <motion.div
-              key={idx}
+              key={post.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -141,11 +85,11 @@ export function Blog() {
                   <div className="flex items-center gap-3 text-[10px] text-[#85857E]">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      {post.date}
+                      {formatDate(post.date)}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
-                      {post.readTime}
+                      {readingTime(post.body)}
                     </span>
                   </div>
                   <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[#85857E] group-hover:text-[#B66F4A] transition-colors">
@@ -154,8 +98,57 @@ export function Blog() {
                   </span>
                 </div>
               </div>
+
+              <Link
+                href={`/blog/${post.slug}`}
+                className="absolute inset-0 z-10"
+                aria-label={`Read "${post.title}"`}
+              />
             </motion.div>
           ))}
+        </div>
+
+        {/* Sources */}
+        <div id="coverage" className="mt-14">
+          <h3 className="text-center text-xs font-bold tracking-[0.2em] text-[#85857E] uppercase mb-5">
+            Sources &amp; Coverage
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {sourceIndex.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  color: item.color,
+                  borderColor: `${item.color}40`,
+                  backgroundColor: `${item.color}10`,
+                }}
+              >
+                {item.label}
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            ))}
+            {furtherCoverage.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  color: item.color,
+                  borderColor: `${item.color}40`,
+                  backgroundColor: `${item.color}10`,
+                }}
+              >
+                {item.label}
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA */}
@@ -166,13 +159,13 @@ export function Blog() {
           transition={{ delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Link
-            href="#"
+          <a
+            href="#coverage"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#CBBCAF] text-[#4D554E] hover:bg-[#E8DCCE] hover:border-[#BBA999] hover:text-[#263129] transition-all duration-300 bg-transparent backdrop-blur-sm"
           >
-            View All Articles
+            View All Sources
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

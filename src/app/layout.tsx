@@ -4,7 +4,11 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { SITE_ORIGIN, SITE_URL, site } from "@/lib/site";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+  const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap",
+  });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SamhithReddy Sangam — Founder & CEO of NEXT360 Organic Products",
+        alt: "Samhith Reddy Sangam — Founder & CEO of NEXT360 Organic Products",
       },
     ],
   },
@@ -68,7 +72,12 @@ const personSchema = {
   "@id": `${SITE_ORIGIN}/#person`,
   name: site.name,
   alternateName: [
+    "samhithreddysangam",
+    "SamhithReddySangam",
     "Samhith Reddy Sangam",
+    "Samhith reddy sangam",
+    "Samith Reddy",
+    "Sangem Samith Reddy",
     "Samhith Reddy",
     "Samhith Sangam",
   ],
@@ -114,7 +123,6 @@ const personSchema = {
     "DevFest 2025 Speaker",
     "T-Hub Ideation 2.0 Selected",
   ],
-  sameAs: [site.socials.linkedin, site.socials.github, site.socials.next360],
 };
 
 const websiteSchema = {
