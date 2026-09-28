@@ -8,10 +8,10 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#08140D]"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#F4EADF]"
     >
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#D97B4D]/4 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#B66F4A]/4 blur-[120px] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -22,14 +22,14 @@ export function Contact() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#85857E] uppercase block mb-4">
               Contact
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Let&apos;s Build Something{" "}
               <span className="text-gradient-accent">Meaningful</span> Together.
             </h2>
-            <p className="text-base md:text-lg text-[#8A918E] max-w-xl mx-auto">
+            <p className="text-base md:text-lg text-[#85857E] max-w-xl mx-auto">
               Whether you&apos;re a farmer looking to partner, an investor exploring opportunities, or a
               brand seeking organic supply — let&apos;s talk.
             </p>
@@ -47,7 +47,7 @@ export function Contact() {
               href="https://calendly.com/samhithreddysangam"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D97B4D] text-white font-semibold text-sm hover:bg-[#c96a3d] transition-all duration-300 shadow-lg shadow-[#D97B4D]/20"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#B66F4A] text-white font-semibold text-sm hover:bg-[#985938] transition-all duration-300 shadow-lg shadow-[#B66F4A]/20"
             >
               <Calendar className="w-4 h-4" />
               Schedule Meeting
@@ -57,7 +57,7 @@ export function Contact() {
               href="https://linkedin.com/in/samhithreddysangam"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] text-[#C6C6C6] hover:text-white hover:border-white/20 transition-all duration-300 bg-[rgba(18,26,21,0.72)] backdrop-blur-sm"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[#CBBCAF] text-[#4D554E] hover:bg-[#E8DCCE] hover:border-[#BBA999] hover:text-[#263129] transition-all duration-300 bg-transparent backdrop-blur-sm"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
@@ -65,7 +65,7 @@ export function Contact() {
             </Link>
             <Link
               href="mailto:ceo.office@gmail.com"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] text-[#C6C6C6] hover:text-white hover:border-white/20 transition-all duration-300 bg-[rgba(18,26,21,0.72)] backdrop-blur-sm"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-[#CBBCAF] text-[#4D554E] hover:bg-[#E8DCCE] hover:border-[#BBA999] hover:text-[#263129] transition-all duration-300 bg-transparent backdrop-blur-sm"
             >
               <Mail className="w-4 h-4" />
               Email
@@ -79,20 +79,20 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="p-6 md:p-8 rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm"
+            className="p-6 md:p-8 rounded-2xl border border-[#D9CBBE]/70 bg-[#FFF8F0] backdrop-blur-sm"
           >
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#D97B4D]/10 border border-[rgba(217,123,77,0.15)] flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-[#D97B4D]" />
+                <div className="w-9 h-9 rounded-lg bg-[#B66F4A]/10 border border-[#B66F4A]/15 flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4 text-[#B66F4A]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#8A918E] uppercase tracking-wider font-medium mb-1">
+                  <p className="text-[10px] text-[#85857E] uppercase tracking-wider font-medium mb-1">
                     Email
                   </p>
                   <Link
                     href="mailto:ceo.office@gmail.com"
-                    className="text-xs md:text-sm text-[#C6C6C6] hover:text-white transition-colors"
+                    className="text-xs md:text-sm text-[#62665F] hover:text-[#985938] transition-colors"
                   >
                     ceo.office<br />@gmail.com
                   </Link>
@@ -100,30 +100,30 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#D97B4D]/10 border border-[rgba(217,123,77,0.15)] flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-[#D97B4D]" />
+                <div className="w-9 h-9 rounded-lg bg-[#B66F4A]/10 border border-[#B66F4A]/15 flex items-center justify-center shrink-0">
+                  <Phone className="w-4 h-4 text-[#B66F4A]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#8A918E] uppercase tracking-wider font-medium mb-1">
+                  <p className="text-[10px] text-[#85857E] uppercase tracking-wider font-medium mb-1">
                     Phone
                   </p>
-                  <p className="text-xs md:text-sm text-[#C6C6C6]">+91 8008253003</p>
+                  <p className="text-xs md:text-sm text-[#62665F]">+91 8008253003</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#D97B4D]/10 border border-[rgba(217,123,77,0.15)] flex items-center justify-center shrink-0">
-                  <Globe className="w-4 h-4 text-[#D97B4D]" />
+                <div className="w-9 h-9 rounded-lg bg-[#B66F4A]/10 border border-[#B66F4A]/15 flex items-center justify-center shrink-0">
+                  <Globe className="w-4 h-4 text-[#B66F4A]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#8A918E] uppercase tracking-wider font-medium mb-1">
+                  <p className="text-[10px] text-[#85857E] uppercase tracking-wider font-medium mb-1">
                     Website
                   </p>
                   <Link
                     href="https://next360.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs md:text-sm text-[#C6C6C6] hover:text-white transition-colors"
+                    className="text-xs md:text-sm text-[#62665F] hover:text-[#985938] transition-colors"
                   >
                     next360.in
                   </Link>
@@ -131,14 +131,14 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#D97B4D]/10 border border-[rgba(217,123,77,0.15)] flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4 text-[#D97B4D]" />
+                <div className="w-9 h-9 rounded-lg bg-[#B66F4A]/10 border border-[#B66F4A]/15 flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 text-[#B66F4A]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#8A918E] uppercase tracking-wider font-medium mb-1">
+                  <p className="text-[10px] text-[#85857E] uppercase tracking-wider font-medium mb-1">
                     Location
                   </p>
-                  <p className="text-xs md:text-sm text-[#C6C6C6]">
+                  <p className="text-xs md:text-sm text-[#62665F]">
                     Karimnagar, Telangana<br />India
                   </p>
                 </div>

@@ -11,9 +11,9 @@ const ventures = [
     description:
       "India's trusted organic commerce platform connecting verified farmers directly to consumers and businesses. Blockchain-backed transparency from farm to table.",
     status: "Active",
-    statusColor: "#4E8F57",
+    statusColor: "#6F8F68",
     icon: Leaf,
-    gradient: "from-[#4E8F57]/20 to-transparent",
+    gradient: "from-[#6F8F68]/20 to-transparent",
     link: "https://next360.in",
   },
   {
@@ -22,9 +22,9 @@ const ventures = [
     description:
       "Full-stack software development and AI consulting for businesses. Building custom solutions from web applications to intelligent data pipelines.",
     status: "Active",
-    statusColor: "#4E8F57",
+    statusColor: "#6F8F68",
     icon: Sparkles,
-    gradient: "from-[#D97B4D]/20 to-transparent",
+    gradient: "from-[#B66F4A]/20 to-transparent",
     link: "#",
   },
   {
@@ -33,9 +33,9 @@ const ventures = [
     description:
       "Bridging the digital divide in rural India. Providing technology infrastructure, digital literacy programs, and market access tools for rural communities.",
     status: "Developing",
-    statusColor: "#D97B4D",
+    statusColor: "#B66F4A",
     icon: Globe,
-    gradient: "from-[#4E8F57]/15 to-transparent",
+    gradient: "from-[#6F8F68]/15 to-transparent",
     link: "https://www.mallaramgramapanchayat.com/en#home",
   },
   {
@@ -44,9 +44,9 @@ const ventures = [
     description:
       "AI-powered weather prediction and climate risk assessment platform for farmers. Hyper-local forecasts, crop advisory, and early warning systems.",
     status: "Research",
-    statusColor: "#8A918E",
+    statusColor: "#85857E",
     icon: Cloud,
-    gradient: "from-[#D97B4D]/15 to-transparent",
+    gradient: "from-[#B66F4A]/15 to-transparent",
     link: "https://www.mallaramgramapanchayat.com/en#home",
   },
 ];
@@ -55,21 +55,21 @@ export function Experience() {
   return (
     <section
       id="ventures"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#0C1C13]"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#EEE1D3]"
     >
       {/* Background */}
-      <div className="absolute bottom-0 left-[-10%] w-[400px] h-[400px] rounded-full bg-[#4E8F57]/4 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-[-10%] w-[400px] h-[400px] rounded-full bg-[#6F8F68]/4 blur-[100px] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#85857E] uppercase block mb-4">
             Ventures
           </span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Building Across{" "}
             <span className="text-gradient-accent">Industries</span>
           </h2>
-          <p className="text-base md:text-lg text-[#8A918E] max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
             From organic commerce to climate intelligence — each venture is a step toward
             a more sustainable, technology-driven future.
           </p>
@@ -84,7 +84,7 @@ export function Experience() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative p-6 md:p-8 rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm overflow-hidden hover:border-[rgba(217,123,77,0.15)] transition-all duration-500"
+              className="group relative p-6 md:p-8 rounded-2xl border border-[#D9CBBE]/70 bg-[#FFF8F0] backdrop-blur-sm overflow-hidden hover:border-[#B66F4A]/15 transition-all duration-500"
             >
               {/* Gradient Overlay */}
               <div
@@ -95,12 +95,12 @@ export function Experience() {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#D97B4D]/10 border border-[rgba(217,123,77,0.15)] flex items-center justify-center">
-                      <venture.icon className="w-5 h-5 text-[#D97B4D]" />
+                    <div className="w-10 h-10 rounded-lg bg-[#B66F4A]/10 border border-[#B66F4A]/15 flex items-center justify-center">
+                      <venture.icon className="w-5 h-5 text-[#B66F4A]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">{venture.name}</h3>
-                      <p className="text-xs text-[#C6C6C6]">{venture.tagline}</p>
+                      <h3 className="text-lg font-bold text-[#263129]">{venture.name}</h3>
+                      <p className="text-xs text-[#62665F]">{venture.tagline}</p>
                     </div>
                   </div>
                   {/* Status Badge */}
@@ -117,7 +117,7 @@ export function Experience() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-[#8A918E] leading-relaxed mb-5">
+                <p className="text-sm text-[#85857E] leading-relaxed mb-5">
                   {venture.description}
                 </p>
 
@@ -126,7 +126,7 @@ export function Experience() {
                   href={venture.link}
                   target={venture.link !== "#" ? "_blank" : undefined}
                   rel={venture.link !== "#" ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#D97B4D] hover:text-[#e8a87c] transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#B66F4A] hover:text-[#985938] transition-colors group/link"
                 >
                   Explore
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

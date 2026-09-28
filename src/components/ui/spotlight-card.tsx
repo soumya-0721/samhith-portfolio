@@ -49,13 +49,13 @@ export function Spotlight({ children, className = "" }: SpotlightProps) {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden ${className}`}
+      className={`relative rounded-xl border border-[#D9CBBE] bg-[#FFF8F0] overflow-hidden ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.1), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, #E6DCD2, transparent 40%)`,
         }}
       />
       {children}

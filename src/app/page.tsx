@@ -27,7 +27,7 @@ export default function Home() {
              x={-1}
              y={-1}
              className={cn(
-                 "h-full w-full stroke-white/[0.02] fill-transparent", 
+                 "h-full w-full stroke-[#263129]/[0.02] fill-transparent", 
                  "[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]"
              )}
           />

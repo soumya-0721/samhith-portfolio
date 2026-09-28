@@ -15,6 +15,7 @@ const footerLinks = [
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
   { name: "Blog", href: "#blog" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -34,18 +35,18 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-[rgba(255,255,255,0.05)] bg-[#08140D] py-12 md:py-16">
+    <footer className="relative border-t border-[#D9CBBE]/60 bg-[#F0E5DA] py-12 md:py-16">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-12 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-4">
             <div className="flex items-center gap-2 mb-4">
-              <Leaf className="w-5 h-5 text-[#4E8F57]" />
-              <span className="text-base font-bold text-white">
+              <Leaf className="w-5 h-5 text-[#6F8F68]" />
+              <span className="text-base font-bold text-[#263129]">
                 <span className="text-gradient-accent">SR.</span>
               </span>
             </div>
-            <p className="text-sm text-[#8A918E] max-w-xs leading-relaxed">
+            <p className="text-sm text-[#85857E] max-w-xs leading-relaxed">
               Building India&apos;s trusted organic commerce infrastructure through technology,
               transparency, and sustainability.
             </p>
@@ -53,30 +54,41 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div className="md:col-span-5">
-            <h4 className="text-xs font-bold text-[#8A918E] uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-[#85857E] uppercase tracking-wider mb-4">
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-2">
               {footerLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleScroll(link.href);
-                  }}
-                  className="text-sm text-[#C6C6C6] hover:text-white transition-colors flex items-center gap-1 group w-fit"
-                >
-                  {link.name}
-                  <ArrowUpRight className="w-3 h-3 text-[#8A918E] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200" />
-                </a>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm text-[#62665F] hover:text-[#985938] transition-colors flex items-center gap-1 group w-fit"
+                  >
+                    {link.name}
+                    <ArrowUpRight className="w-3 h-3 text-[#85857E] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200" />
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScroll(link.href);
+                    }}
+                    className="text-sm text-[#62665F] hover:text-[#985938] transition-colors flex items-center gap-1 group w-fit"
+                  >
+                    {link.name}
+                    <ArrowUpRight className="w-3 h-3 text-[#85857E] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200" />
+                  </a>
+                )
               ))}
             </div>
           </div>
 
           {/* Social Column */}
           <div className="md:col-span-3">
-            <h4 className="text-xs font-bold text-[#8A918E] uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-[#85857E] uppercase tracking-wider mb-4">
               Connect
             </h4>
             <div className="flex flex-col gap-3">
@@ -84,40 +96,40 @@ export function Footer() {
                 href="https://github.com/samhithreddysangam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
+                className="flex items-center gap-2 text-sm text-[#62665F] hover:text-[#985938] transition-colors group"
               >
                 <Github className="w-4 h-4" />
                 GitHub
-                <ArrowUpRight className="w-3 h-3 text-[#8A918E] group-hover:text-[#D97B4D] transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-[#85857E] group-hover:text-[#B66F4A] transition-colors" />
               </Link>
               <Link
                 href="https://linkedin.com/in/samhithreddysangam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
+                className="flex items-center gap-2 text-sm text-[#62665F] hover:text-[#985938] transition-colors group"
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
-                <ArrowUpRight className="w-3 h-3 text-[#8A918E] group-hover:text-[#D97B4D] transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-[#85857E] group-hover:text-[#B66F4A] transition-colors" />
               </Link>
               <Link
                 href="mailto:ceo.office@gmail.com"
-                className="flex items-center gap-2 text-sm text-[#C6C6C6] hover:text-white transition-colors group"
+                className="flex items-center gap-2 text-sm text-[#62665F] hover:text-[#985938] transition-colors group"
               >
                 <Mail className="w-4 h-4" />
                 Email
-                <ArrowUpRight className="w-3 h-3 text-[#8A918E] group-hover:text-[#D97B4D] transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-[#85857E] group-hover:text-[#B66F4A] transition-colors" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="mt-8 pt-6 border-t border-[rgba(255,255,255,0.05)] flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[#8A918E]">
+        <div className="mt-8 pt-6 border-t border-[#D9CBBE]/60 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-[#85857E]">
             &copy; {currentYear} Samhith Reddy Sangam. All rights reserved.
           </p>
-          <p className="text-xs text-[#8A918E]">
+          <p className="text-xs text-[#85857E]">
             Built with purpose in India
           </p>
         </div>

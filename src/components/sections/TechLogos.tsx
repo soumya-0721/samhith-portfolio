@@ -32,9 +32,9 @@ const missionPoints = [
 
 export function TechLogos() {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-[#0C1C13] border-y border-[rgba(255,255,255,0.03)]">
+    <section className="relative py-20 md:py-28 overflow-hidden bg-[#EEE1D3] border-y border-[#D9CBBE]/40">
       {/* Background glow */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#4E8F57]/4 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#6F8F68]/4 blur-[120px] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section intro */}
@@ -44,14 +44,14 @@ export function TechLogos() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#85857E] uppercase block mb-4">
             Our Mission
           </span>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl mx-auto">
             Building the backbone of India&apos;s{" "}
             <span className="text-gradient-accent">organic ecosystem</span>
           </h2>
-          <p className="mt-4 text-sm md:text-base text-[#8A918E] max-w-xl mx-auto">
+          <p className="mt-4 text-sm md:text-base text-[#85857E] max-w-xl mx-auto">
             Every feature we build, every partnership we forge, and every farmer we onboard
             brings us closer to a transparent, sustainable, and prosperous organic India.
           </p>
@@ -67,13 +67,13 @@ export function TechLogos() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -3 }}
-              className="group relative p-5 md:p-6 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm hover:border-[rgba(78,143,87,0.2)] transition-all duration-300"
+              className="group relative p-5 md:p-6 rounded-xl border border-[#D9CBBE]/70 bg-[#FFF8F0] backdrop-blur-sm hover:border-[#C8D5C2] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#4E8F57]/10 border border-[rgba(78,143,87,0.15)] flex items-center justify-center mb-4 group-hover:bg-[#4E8F57]/20 transition-all duration-300">
-                <point.icon className="w-5 h-5 text-[#4E8F57]" />
+              <div className="w-10 h-10 rounded-lg bg-[#6F8F68]/10 border border-[#6F8F68]/15 flex items-center justify-center mb-4 group-hover:bg-[#6F8F68]/20 transition-all duration-300">
+                <point.icon className="w-5 h-5 text-[#6F8F68]" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">{point.title}</h3>
-              <p className="text-sm text-[#8A918E] leading-relaxed">{point.description}</p>
+              <h3 className="text-base font-bold text-[#263129] mb-2">{point.title}</h3>
+              <p className="text-sm text-[#85857E] leading-relaxed">{point.description}</p>
             </motion.div>
           ))}
         </div>
