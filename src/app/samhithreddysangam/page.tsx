@@ -188,7 +188,7 @@ export default function ProfilePage() {
                 Official Profile
               </span>
 
-              PLACEHOLDER_NOOP
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#263129] leading-[1.15] mb-5">
                 Samhith Reddy Sangam
               </h1>
 

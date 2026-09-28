@@ -64,6 +64,9 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  verification: {
+    google: "cOdpK6UrrGtzRlC6dgbqkZfQWTLTqNx7Mnk4w58xCak",
+  },
 };
 
 const personSchema = {
