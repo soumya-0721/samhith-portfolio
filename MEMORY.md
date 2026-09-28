@@ -1,6 +1,6 @@
 # Samhith Portfolio — Project Memory
 
-> Last updated: July 15, 2026  
+> Last updated: September 28, 2026  
 > Branch: `main`  
 > Dev server: `http://localhost:3000`
 
@@ -30,6 +30,7 @@ All sections are rendered on `src/app/page.tsx` as a single-page scrolling layou
 | `achievements` | Achievements.tsx | Achievements.tsx |
 | `vision2030` | Featured.tsx (repurposed) | Featured.tsx |
 | `insights` | FAQ.tsx (repurposed) | FAQ.tsx |
+| `blog` | Blog.tsx | Blog.tsx |
 | `contact` | Contact.tsx | Contact.tsx |
 
 **Key rule:** NEVER create new section files. Always repurpose existing ones.
@@ -87,7 +88,92 @@ function createRng(seed: number) {
 
 ### Current Build Status
 
-✅ Clean build — no TypeScript or compilation errors.
+✅ Clean build — `npm run build` passes successfully.
+
+---
+
+## 🚀 Session 2: Major Content & UI Updates (July 16, 2026)
+
+### 📞 Contact Information
+- **Phone:** Updated from `+91 (Available on Request)` → `+91 8008253003`
+- **Email:** Updated from `samhithreddysangam@gmail.com` → `ceo.office@gmail.com`
+- **Files affected:** `Contact.tsx`, `Footer.tsx`
+
+### 🗓️ Company Timeline (Education.tsx)
+- Removed **2024** entries (Company Registration & Website Launch)
+- **2025** → Hackathons & Recognition (Agentathon, Guinness World Record, DevFest)
+- **2026** → Company Registration → Website & Brand Launch → T-Hub Incubation
+- **2030** → Vision 2030 (Pan India + Global Expansion)
+
+### 📈 Growth Graph (Projects.tsx)
+- Changed from `2022-2026` → `2026-2030` trajectory
+- Bottom label: "Pan India Growth"
+
+### 🌿 Marketplace Capsules (Skills.tsx)
+- Replaced `Fresh Produce / Grains & Pulses / Spices` with premium capsules:
+  - 🌿 **Organic** — Green highlighted with `Leaf` Lucide icon
+  - 🌱 **Natural** — Neutral style with `Sprout` Lucide icon
+  - ♻️ **Eco Friendly** — Neutral style with `Recycle` Lucide icon
+
+### 🏅 Certifications (Achievements.tsx)
+- **Removed:** JPMorgan Chase, Goldman Sachs, Accenture
+- **Kept:** Cyber DevX, Python Programming
+
+### 🔗 Venture Links (Experience.tsx)
+- **Gram360** → `mallaramgramapanchayat.com/en#home`
+- **Weather AI** → `mallaramgramapanchayat.com/en#home` (temporary)
+- **Slick Solutions** → Kept `#` but removed `target="_blank"` (no blank tab)
+
+### 🛡️ External Link Security
+- Added `rel="noopener noreferrer"` to all external `target="_blank"` links across `Contact.tsx`, `Footer.tsx`, `Experience.tsx`, `Skills.tsx`
+
+### 📝 Blog Section (New)
+- **Created:** `src/components/sections/Blog.tsx`
+- **Nav:** Added "Blog" in `Navbar.tsx` and `Footer.tsx` after "Insights"
+- **Page:** Rendered between `<FAQ />` and `<Contact />` in `page.tsx`
+- **Design:** 6 placeholder cards with glassmorphism, Framer Motion, category badges, Read More buttons
+- **Content:** Placeholder only — ready for real articles
+
+### 🦸 Hero Section Fixes
+- **"View NEXT360" button:** Changed from internal `#next360` scroll → opens `https://next360.in` in new tab with `target="_blank"` + `rel="noopener noreferrer"`
+- **Founded stat:** Updated from `2024` → `2026` (consistent with new timeline)
+
+---
+
+## 🖼 Hero Section — Round 2: Premium Portrait Redesign (July 16, 2026)
+
+### ❌ Removed
+- **Circular/blob green backlight** (`bg-[#4E8F57]/10 blur-[30px]`) — removed completely
+- **Square border frame** (`border-2 border-[rgba(78,143,87,0.2)]`) around portrait
+- **Decorative ring** (`inset-[-12px] rounded-2xl border`) around the image
+- **Gradient overlay** (`bg-gradient-to-t from-[#08140D]/60`) over the portrait
+- **Right-edge gradient fade** on the India map container
+- **Small shadow div** beneath the portrait (replaced with larger ambient glow)
+
+### ✅ Added / Changed
+- **Portrait size increased ~87-100% from original** (from 160/180/220px → **300/360/440px**) — now large enough to completely cover the green circle glow behind it
+- **Image mode** changed from `object-cover` → `object-contain` for transparent PNG rendering
+- **Portrait positioned toward right edge** using `ml-auto -mr-10 md:-mr-16` — overflows column for a premium breakout effect
+- **India Map repositioned** — now centered directly behind the portrait (was beside it)
+- **India Map scaled up** — container increased from 380/460/540px to 400/500/620px
+- **Green circle glow inside AnimatedIndiaMap** reduced from 350/400px → 200/240/260px and opacity reduced from `/8` → `/5` — kept small so the enlarged portrait covers it entirely
+- **Single subtle ambient green glow** extending downward: `bg-[#4E8F57]/4 blur-[120px]` — barely perceptible, no visible circular shape
+- **Soft ambient light behind portrait**: `bg-[#4E8F57]/5 blur-[100px]` and `drop-shadow(0 0 30px rgba(78,143,87,0.25))`
+- **Column wrapper** `overflow-hidden` removed so portrait can visually overflow to the right (section level `overflow-hidden` still prevents page scroll)
+
+### 🔒 Unchanged
+- Grid layout: `lg:col-span-8` (text) / `lg:col-span-4` (portrait) — left text area fully preserved
+- All left-side text, buttons, CTA links, typography
+- Statistics bar with animated counters
+- Leaf decorations, scroll indicator, mouse glow
+- `AnimatedIndiaMap` SVG component (only its internal glow size changed)
+
+---
+
+## 📁 Git Ignore
+
+- Added `server.log` to `.gitignore` under a `# logs` section
+- Added `nul` to `.gitignore` (Windows artifact)
 
 ---
 
@@ -116,23 +202,26 @@ function createRng(seed: number) {
 
 ## 🔄 Git Workflow
 
-- Remote (changed): `https://github.com/ashwanthreddychalla/portfolio.git`
-  - Was previously `https://github.com/shivaganesh9515/Samhith.git`
-- Main branch: `main`
-- Working branch: `ashwanth`
-- Always pull `main` before starting work, then merge/rebase into `ashwanth`
+- Remote (current): `https://github.com/samhithreddysangam/samhithreddy-portfolio.git`
+  - Was previously `ashwanthreddychalla/portfolio.git`, before that `shivaganesh9515/Samhith.git`
+- Single branch pushed: `main`
+- Commit and push directly on `main`
 
-### Recent Merges
+### Recent Commits (July 16, 2026)
 
-- **Commit `be9430c`** — "Update hero section with new profile image (sangam-profile.png) and refactor portrait styling"
-  - Committed on `ashwanth`, then fast-forward merged into `main`
-  - Pushed to old remote (`origin/main`)
+- `be9430c` — Update hero section with new profile image (sangam-profile.png) and refactor portrait styling
+- `1fedb18` — Update portfolio: contact info, timeline, growth graph, marketplace capsules, certifications, venture links, and add Blog section
+- `3e8cf35` — Fix Hero View NEXT360 button to open next360.in in new tab
+- `7fdea35` — Add nul to .gitignore
+- Both `ashwanth` and `main` branches pushed to remote
+- PR link: https://github.com/shivaganesh9515/Samhith/compare/main...ashwanth?expand=1
 
-### Pending: Push to New Repo
+### Migration: Push to `samhithreddy-portfolio`
 
-- Remote changed to `ashwanthreddychalla/portfolio.git`
-- Push failed with **403 Forbidden** — current Git credentials (`Ashwanthreddy-18`) don't have access
-- **Fix:** Log in as `ashwanthreddychalla` or add `Ashwanthreddy-18` as a collaborator on the new repo
+- `ashwanth` merged into `main`; `ashwanth` work is now on `main`
+- Code pushed to `https://github.com/samhithreddysangam/samhithreddy-portfolio` (`main` only)
+- Hero portrait now uses `public/assets/samhith.png`
+- Green circle / glow decorations removed from the Hero and About sections
 
 ---
 

@@ -9,6 +9,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Featured } from "@/components/sections/Featured";
 import { FAQ } from "@/components/sections/FAQ";
+import { Blog } from "@/components/sections/Blog";
 import { Contact } from "@/components/sections/Contact";
 import { Navbar } from "@/components/layout/Navbar";
 import { GridPattern } from "@/components/ui/grid-pattern";
@@ -26,7 +27,7 @@ export default function Home() {
              x={-1}
              y={-1}
              className={cn(
-                 "h-full w-full stroke-white/[0.02] fill-transparent", 
+                 "h-full w-full stroke-[#263129]/[0.02] fill-transparent", 
                  "[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]"
              )}
           />
@@ -46,6 +47,7 @@ export default function Home() {
           <Achievements />
           <Featured />
           <FAQ />
+          <Blog />
           <Contact />
           <Footer />
       </div>

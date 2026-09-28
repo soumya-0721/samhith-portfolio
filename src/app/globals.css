@@ -2,30 +2,30 @@
 
 @theme {
   --font-sans: var(--font-inter);
-  --color-bg-primary: #08140D;
-  --color-bg-secondary: #0C1C13;
-  --color-card: rgba(18,26,21,0.72);
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #C6C6C6;
-  --color-text-muted: #8A918E;
-  --color-accent: #D97B4D;
-  --color-success: #4E8F57;
-  --color-border: rgba(255,255,255,0.08);
+  --color-bg-primary: #F4EADF;
+  --color-bg-secondary: #EEE1D3;
+  --color-card: #FFF8F0;
+  --color-text-primary: #263129;
+  --color-text-secondary: #62665F;
+  --color-text-muted: #85857E;
+  --color-accent: #B66F4A;
+  --color-success: #6F8F68;
+  --color-border: #D9CBBE;
 }
 
 :root {
-  --background: #08140D;
-  --foreground: #FFFFFF;
-  --primary: #FFFFFF;
-  --secondary: #C6C6C6;
-  --accent: #D97B4D;
-  --muted: #8A918E;
-  --border: rgba(255,255,255,0.08);
+  --background: #F4EADF;
+  --foreground: #263129;
+  --primary: #263129;
+  --secondary: #62665F;
+  --accent: #B66F4A;
+  --muted: #85857E;
+  --border: #D9CBBE;
 }
 
 body {
-  background: #08140D;
-  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217,123,77,0.08), transparent);
+  background: #F4EADF;
+  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(182,111,74,0.06), transparent);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
@@ -37,22 +37,22 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #08140D;
+  background: #F4EADF;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(217,123,77,0.3);
+  background: rgba(182,111,74,0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(217,123,77,0.5);
+  background: rgba(182,111,74,0.5);
 }
 
 /* Custom Utilities */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(244,234,223,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244,234,223,0.03) 1px, transparent 1px);
 }
 
 .perspective-1000 {
@@ -61,14 +61,14 @@ body {
 
 /* Glass Card Utility */
 .glass-card {
-  background: rgba(18,26,21,0.72);
+  background: #FFF8F0;
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid #D9CBBE;
 }
 
 /* Text Gradient Utility */
 .text-gradient-accent {
-  background: linear-gradient(135deg, #D97B4D, #E8A87C);
+  background: linear-gradient(135deg, #B66F4A, #985938);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

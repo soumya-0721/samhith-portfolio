@@ -3,9 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Home", href: "#hero" },
@@ -17,16 +18,42 @@ const navLinks = [
   { name: "Achievements", href: "#achievements" },
   { name: "Vision 2030", href: "#vision2030" },
   { name: "Insights", href: "#insights" },
+  { name: "Blog", href: "#blog" },
+  { name: "Gallery", href: "/gallery" },
 ];
 
 export function Navbar() {
-  const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
+  const isGallery = pathname === "/gallery";
+  const [activeSection, setActiveSection] = useState(() => {
+    if (typeof window !== "undefined") {
+      if (window.location.pathname === "/gallery") return "/gallery";
+      const hash = window.location.hash;
+      if (hash) return hash;
+    }
+    return "#hero";
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lenis = useLenis();
 
+  // Sync active state with route changes
+  useEffect(() => {
+    if (isGallery) {
+      setActiveSection("/gallery");
+    } else {
+      const hash = window.location.hash;
+      if (hash) setActiveSection(hash);
+    }
+  }, [pathname, isGallery]);
+
   // Handle Smooth Scroll for Desktop & Mobile
-  const handleScroll = (href: string) => {
-    setIsMobileMenuOpen(false); // Close menu on click
+  const handleScroll = useCallback((href: string) => {
+    setIsMobileMenuOpen(false);
+    setActiveSection(href);
+    if (href.startsWith("/")) {
+      // Route navigation — handled by Link/anchor default
+      return;
+    }
     if (href === "#") {
         lenis?.scrollTo(0);
     } else {
@@ -35,9 +62,19 @@ export function Navbar() {
             lenis?.scrollTo(element as HTMLElement, { offset: -100 });
         }
     }
-  };
+  }, [lenis]);
 
-  // Active Section Observer
+  // Listen for hash changes (e.g. browser back/forward)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) setActiveSection(hash);
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // Active Section Observer (fallback for scroll-based detection)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,7 +88,7 @@ export function Navbar() {
     );
 
     navLinks.forEach((link) => {
-      if (link.href !== "#") {
+      if (link.href !== "#" && !link.href.startsWith("/")) {
         const element = document.querySelector(link.href);
         if (element) observer.observe(element);
       }
@@ -69,7 +106,7 @@ export function Navbar() {
               <motion.div 
                initial={{ opacity: 0, y: -20 }}
                animate={{ opacity: 1, y: 0 }}
-               className="bg-[rgba(18,26,21,0.72)] backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 text-white font-semibold shadow-xl shadow-black/20"
+               className="bg-[#FFF8F0] backdrop-blur-xl border border-[#D9CBBE] rounded-full px-5 py-2.5 text-[#263129] font-semibold shadow-xl shadow-black/10"
              >
                 <span className="text-gradient-accent">SR.</span>
              </motion.div>
@@ -79,25 +116,46 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="hidden md:flex items-center gap-1 bg-[rgba(18,26,21,0.72)] backdrop-blur-xl border border-white/10 rounded-full p-1.5 shadow-xl shadow-black/20"
+                className="hidden md:flex items-center gap-1 bg-[#FFF8F0] backdrop-blur-xl border border-[#D9CBBE] rounded-full p-1.5 shadow-xl shadow-black/10"
              >
                 {navLinks.map((link) => {
-                    const isActive = activeSection === link.href || (link.href === "#" && activeSection === "");
-                    return (
-                      <a 
-                          key={link.name} 
+                    const isRoute = link.href.startsWith("/");
+                    const isActive = isRoute
+                      ? pathname === link.href
+                      : activeSection === link.href || (link.href === "#" && activeSection === "");
+                    return isRoute ? (
+                      <Link
+                          key={link.name}
                           href={link.href}
-                          onClick={(e) => { e.preventDefault(); handleScroll(link.href); }}
                           className={cn(
                               "relative px-3 py-2 rounded-full transition-all duration-300 text-xs font-medium whitespace-nowrap",
-                              isActive ? "text-white bg-white/10" : "text-[#8A918E] hover:text-white hover:bg-white/5"
+                              isActive ? "text-[#263129] bg-[#E3D8CC]" : "text-[#62665F] hover:text-[#263129] hover:bg-[#E8DCCE]"
                           )}
                       >
                           {link.name}
                           {isActive && (
                               <motion.div
                                   layoutId="active-nav"
-                                  className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                                  className="absolute inset-0 bg-[#E3D8CC] rounded-full -z-10"
+                                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                              />
+                          )}
+                      </Link>
+                    ) : (
+                      <a 
+                          key={link.name} 
+                          href={link.href}
+                          onClick={(e) => { e.preventDefault(); handleScroll(link.href); }}
+                          className={cn(
+                              "relative px-3 py-2 rounded-full transition-all duration-300 text-xs font-medium whitespace-nowrap",
+                              isActive ? "text-[#263129] bg-[#E3D8CC]" : "text-[#62665F] hover:text-[#263129] hover:bg-[#E8DCCE]"
+                          )}
+                      >
+                          {link.name}
+                          {isActive && (
+                              <motion.div
+                                  layoutId="active-nav"
+                                  className="absolute inset-0 bg-[#E3D8CC] rounded-full -z-10"
                                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                               />
                           )}
@@ -116,7 +174,7 @@ export function Navbar() {
                 <a 
                     href="#contact" 
                     onClick={(e) => { e.preventDefault(); handleScroll("#contact"); }}
-                    className="group flex items-center gap-2 bg-[#D97B4D] text-white px-5 py-2.5 rounded-full font-semibold hover:bg-[#c96a3d] transition-colors shadow-lg shadow-[#D97B4D]/20"
+                    className="group flex items-center gap-2 bg-[#B66F4A] text-white px-5 py-2.5 rounded-full font-semibold hover:bg-[#985938] transition-colors shadow-lg shadow-[#B66F4A]/20"
                 >
                    Contact
                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -128,7 +186,7 @@ export function Navbar() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900/90 backdrop-blur-xl border border-white/10 text-white shadow-xl pointer-events-auto"
+                className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-[#E8DCCE] backdrop-blur-xl border border-[#D9CBBE] text-[#263129] shadow-xl pointer-events-auto"
              >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
              </motion.button>
@@ -142,10 +200,27 @@ export function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl pt-32 px-6 md:hidden flex flex-col items-center"
+              className="fixed inset-0 z-40 bg-[#263129]/95 backdrop-blur-3xl pt-32 px-6 md:hidden flex flex-col items-center"
            >
               <div className="flex flex-col items-center gap-8 text-center">
-                  {navLinks.map((link, idx) => (
+                  {navLinks.map((link, idx) => {
+                    const isRoute = link.href.startsWith("/");
+                    return isRoute ? (
+                      <motion.div
+                         key={link.name}
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ delay: 0.1 + idx * 0.05 }}
+                      >
+                        <Link
+                           href={link.href}
+                           className="text-2xl font-medium text-white/80 hover:text-white transition-colors"
+                           onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                      </motion.div>
+                    ) : (
                       <motion.a
                          key={link.name}
                          href={link.href}
@@ -157,7 +232,8 @@ export function Navbar() {
                       >
                           {link.name}
                       </motion.a>
-                  ))}
+                    );
+                  })}
                   
                   <motion.div
                      initial={{ opacity: 0, y: 20 }}

@@ -6,7 +6,7 @@ import { Trophy, Award, Building2, Lightbulb, Newspaper, Shield, Star } from "lu
 const achievementCategories = [
   {
     category: "Startup & Innovation",
-    color: "#D97B4D",
+    color: "#B66F4A",
     icon: Lightbulb,
     items: [
       "Founded NEXT360 Organic Products Pvt. Ltd.",
@@ -17,7 +17,7 @@ const achievementCategories = [
   },
   {
     category: "Hackathons & Competitions",
-    color: "#4E8F57",
+    color: "#6F8F68",
     icon: Trophy,
     items: [
       "Guinness World Record Holder — AI Agentathon 2025",
@@ -27,7 +27,7 @@ const achievementCategories = [
   },
   {
     category: "Government & Institutional",
-    color: "#D97B4D",
+    color: "#B66F4A",
     icon: Building2,
     items: [
       "National Seva Internship Cell Lead – INDGenius",
@@ -37,7 +37,7 @@ const achievementCategories = [
   },
   {
     category: "Innovation & Research",
-    color: "#4E8F57",
+    color: "#6F8F68",
     icon: Star,
     items: [
       "Generative AI Research & Application Development",
@@ -47,7 +47,7 @@ const achievementCategories = [
   },
   {
     category: "Awards & Recognition",
-    color: "#D97B4D",
+    color: "#B66F4A",
     icon: Award,
     items: [
       "Certificate of Outstanding Performance — S.R. University",
@@ -57,7 +57,7 @@ const achievementCategories = [
   },
   {
     category: "Media & Publications",
-    color: "#4E8F57",
+    color: "#6F8F68",
     icon: Newspaper,
     items: [
       "Featured in LinkedIn News for Guinness World Record",
@@ -67,12 +67,9 @@ const achievementCategories = [
   },
   {
     category: "Certifications",
-    color: "#D97B4D",
+    color: "#B66F4A",
     icon: Shield,
     items: [
-      "JPMorgan Chase — Software Engineering Lite",
-      "Goldman Sachs — Software Engineering Virtual Experience",
-      "Accenture — Data Analytics and Visualization",
       "Cyber DevX — Cybersecurity & Emerging Tech",
       "Python Programming — Beginner to Master (Udemy)",
     ],
@@ -83,21 +80,21 @@ export function Achievements() {
   return (
     <section
       id="achievements"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#0C1C13]"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#EEE1D3]"
     >
       {/* Background */}
-      <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] rounded-full bg-[#D97B4D]/3 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] rounded-full bg-[#B66F4A]/3 blur-[100px] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#8A918E] uppercase block mb-4">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#85857E] uppercase block mb-4">
             Achievements
           </span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Milestones &{" "}
             <span className="text-gradient-accent">Recognition</span>
           </h2>
-          <p className="text-base md:text-lg text-[#8A918E] max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-[#85857E] max-w-2xl mx-auto">
             From world records to institutional honors — a track record of excellence.
           </p>
         </div>
@@ -110,7 +107,7 @@ export function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="group p-5 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(18,26,21,0.72)] backdrop-blur-sm hover:border-[rgba(217,123,77,0.15)] transition-all duration-300"
+              className="group p-5 rounded-xl border border-[#D9CBBE]/70 bg-[#FFF8F0] backdrop-blur-sm hover:border-[#B66F4A]/15 transition-all duration-300"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-4">
@@ -120,7 +117,7 @@ export function Achievements() {
                 >
                   <section.icon className="w-4.5 h-4.5" style={{ color: section.color }} />
                 </div>
-                <h3 className="text-sm font-bold text-white">{section.category}</h3>
+                <h3 className="text-sm font-bold text-[#263129]">{section.category}</h3>
               </div>
 
               {/* Items */}
@@ -138,7 +135,7 @@ export function Achievements() {
                       className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 transition-colors duration-300"
                       style={{ backgroundColor: section.color }}
                     />
-                    <span className="text-xs md:text-sm text-[#C6C6C6] leading-relaxed group-hover/item:text-white transition-colors duration-300">
+                    <span className="text-xs md:text-sm text-[#62665F] leading-relaxed group-hover/item:text-[#263129] transition-colors duration-300">
                       {item}
                     </span>
                   </motion.li>
